@@ -1,0 +1,29 @@
+#site-header {
+	background-color: $header-color;
+}
+
+#header.navbar.center {
+	background-color: $section-color;
+
+	.navbar-inner {
+		text-align: center;
+
+		.nav {
+			display       : inline-block;
+			float         : none;
+			vertical-align: top;
+			margin        : 0;
+
+			> li {
+				display: inline-block;
+
+				.material-icons {
+					font-size: 25px;
+					@media(min-width: $screen-sm) {
+						font-size: 35px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,143 @@
+extends templates/layout.pug
+
+block preBody
+	-(bodyClasses.push("indexBody"))
+
+block append scripts
+	script(type='text/javascript', src='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js')
+	script(type='text/javascript',src='/javascripts/homepage.js')
+
+block append footerscripts
+	script(src="https://www.google.com/recaptcha/api.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js")
+
+block header
+	include includes/loader.pug
+	#header.navbar.navbar-inverse.navbar-fixed-top.center
+		.navbar-inner
+			ul.nav.navbar-nav
+				li
+					a(href='#section-intro')
+						i.material-icons &#xE7FD;
+				li
+					a(href='#section-examples')
+						i.material-icons &#xE333;
+				li
+					a(href='#section-resume')
+						i.material-icons &#xE0E0;
+				li
+					a(href='#section-skills')
+						i.material-icons &#xE6C4;
+				li
+					a(href='#section-contactme')
+						i.material-icons &#xE0D8;
+
+block content
+	#content.container-fluid
+		.row.main-row
+			.col-xs-12
+				#section-intro
+					#logo-section
+						img.img-responsive.image-spacing(src='/images/logo.png')
+						h1.h1-heading Zo&euml; Clarno
+						h2.h2-heading Web + Software Developer
+					#section-profileImage
+						div
+							img.img-responsive.hero(src="/images/hero.jpg")
+		.row.main-row.dark.container-spacing
+			#section-about-col.col-xs-12
+				.row
+					#section-about.container-spacing
+						.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
+							.section-title.h3-heading.section
+								span About Me
+						.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
+							.section-text.body-text.section
+								| I am a young and dedicated professional developer looking to consistently chanllenge myself and contribute to a community. I enjoy learning new topics and pick up on things quickly. I spend most of my time playing games and researching various personal projects. I have recently started participating in the open source community, contributing to largely used projects such as the Atom Text Editor.
+						.col-xs-12
+							br
+							br
+						.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
+							div.aboutSectionBtn.site-button(onclick='viewResume()') View Resume
+							div.aboutSectionBtn.site-button(onclick='viewResume(true)') Print Resume
+		.row.main-row.portfolio-row.container-spacing
+			.col-xs-12
+				.main-row-title.h3-heading Portfolio / My Projects
+				hr.main-row-title-line.separator-line
+				each project in pObj.projects
+					.project-container
+						.project-title.body-title= project.title
+						hr.main-row-title-line
+						.project-asset-container
+							.project-desktop-asset
+								img(src=project.assets.desktop)
+							//-.project-tablet-asset
+								img(src=project.assets.tablet)
+							.project-mobile-asset
+								img(src=project.assets.mobile)
+						.project-description.body-text!= project.description
+						.project-tags
+							each tag in project.skills
+								.item-tag= tag
+						if project.view
+							.project-view-btn.site-button(onclick="linkto(#{project.view})") View
+						else if project.noView
+							.project-no-view= project.noView
+		.row.main-row.why-me-row.container-spacing
+			.col-xs-12
+				.main-row-title.section-title.h3-heading.section Why Me?
+				hr.main-row-title-line.separator-line
+				.row
+					each why, key in whyMe.list
+						.col-xs-12.col-md-6
+							.why-me-box
+								.why-me-box-title.section-title.body-title.section= why.title
+								.why-me-box-description.section-title.body-text.section= why.description
+						if whyMe.list[key+1] && (key + 1) % 2 == 0
+							.col-xs-12
+								hr.why-me-line-row.separator-line
+						else
+							.col-xs-12.hidden-md.hidden-lg
+								hr.why-me-line-row.separator-line
+		.row.main-row.skills-row.container-spacing
+			.col-xs-12
+				.main-row-title.h3-heading Skills
+				hr.main-row-title-line.separator-line
+				each skillset in skills
+					div(class=skillset.tags ? "skills-item-container skill-tags" : "skills-item-container skill-check")
+						.skill-title.body-title #{skillset.name}
+						.skill-items
+							each skill in skillset.items
+								.skill #{skill}
+					.languages-container
+						.languages-title.body-title Languages / Technologies
+						each language in skills.Languages
+							.language #{language}
+					.tools-container
+						.tools-title.body-title Tools
+						each tool in skills.Tools
+							.tool #{tool}
+					.philosophies-container
+						.philosophies-title.body-title Philosophies
+						each philo in skills.Philosophies
+							.philosophy #{philo}
+		.row.main-row.contact-row.container-spacing
+			#contactMeSection.col-xs-12
+				form(action='contact.php', method='post')
+					input(type='text', name='cf_name', placeholder='Name')
+					input(type='text', name='cf_email', placeholder="Email Address")
+					textarea(name='cf_message', placeholder="Message")
+					.g-recaptcha(data-theme='dark', data-sitekey='6LefjRMUAAAAAEQaJj_IX_xqhgmBcEwioGgIhRXM')
+					.submitBtn Submit
+		.row.footer-row
+			.footer-container
+				.footer-container-row
+					.col-xs-12.col-md-6.col-md-push-6
+						.social-media-links
+							i.fa.fa-twitter-square(aria-hidden="true")
+							i.fa.fa-github-square(aria-hidden="true")
+							i.fa.fa-linkedin-square(aria-hidden="true")
+					.col-xs-12.col-md-6.col-md-pull-6
+						.copyright-text
+							|Copyright &copy; #{year} Zo&euml; Clarno
+					.clearfix

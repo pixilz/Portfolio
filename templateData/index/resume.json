@@ -1,0 +1,64 @@
+{
+    "Education": [{
+        "title": "High School Diploma (05/2013)",
+        "subtitle": "Utah County Academy of Sciences",
+        "date": "2010/08/23 - 2013/05/24",
+        "location": "Orem, UT",
+        "country": "USA",
+        "list": [
+            "Mechatronics (NXC)"
+        ]
+    }, {
+        "title": "Associates in University Studies (05/2013)",
+        "subtitle": "Utah Valley University (UVU)",
+        "date": "2010/08/23 - 2014/12/18",
+        "location": "Orem, UT",
+        "country": "USA",
+        "list": [
+            "CS 1400 (C#)",
+            "CS 1410 (C++)",
+            "CS 2420 (C++)",
+            "CS 2810 (Assembly)",
+            "Designed &amp; Developed website for a campus club"
+        ]
+    }],
+    "Work Experience": [{
+        "title": "Web Marketing Specialist",
+        "subtitle": "Dreamfire",
+        "date": "2012/07 - 2013/04",
+        "location": "Orem, UT",
+        "country": "USA",
+        "list": [
+            "Created time saving automation skills",
+            "Responsible for solitary projects",
+            "Became efficient with repetitive tasks",
+            "Largely responsible for promoting back linking"
+        ]
+    }, {
+        "title": "Web Developer",
+        "subtitle": "Abovetraining (StateFoodSafety)",
+        "date": "2014/02 - Present",
+        "location": "Orem, UT",
+        "country": "USA",
+        "list": [
+            "li-list1",
+            "Assisted in developing large scale web applications",
+            "Experience working with an extensive backend database",
+            "Developed skills in front end web technologies",
+            "Experience developing html email templates from scratch",
+            "Responsible for developing front-end automation testing"
+        ],
+        "list1": {
+            "title": "Technical experience in:",
+            "list": [
+                "Agile Development (SCRUM)",
+                "Javascript (JQuery, Extjs)",
+                "NodeJs (Selenium)",
+                "HTML (Bootstrap)",
+                "Css (Scss, Responsivity)",
+                "Php (Composer, Smarty)",
+                "Sql (MySql)"
+            ]
+        }
+    }]
+}

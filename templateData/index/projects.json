@@ -1,0 +1,41 @@
+{
+	"projects": [{
+		"title": "StateFoodSafety.com",
+		"description": "<a href='https://www.statefoodsafety.com'>StateFoodSafety.com</a> is the primary website for AboveTraining. I have been working for AboveTraining for a little over two and a half years now, and have been lucky enough to gain the experience and knowledge that comes from doing general web development. This site's main goal is to deliver online training and certification for food related safety (E.G. Food Handler, Alcohol Server, and Food Protection Manager training and certification) to individuals in the food industry. I have been lucky enough to have my voice heard and implement tools that have been beneficial to the efficiency and flow of AboveTraining at large. Some of these examples include templating tools that allow for non-developers to more easily manage the SEO and products of all websites that AboveTraining runs. During my time with AboveTraining the project has been modified into an MVC 'layout' using smarty and composer as the main powerhouses behind this task. \nOn top of front-end development for this website I have also been in charge of some minor front-end automated QA involving the verification that content on each page relating to the database is all working as intended, as well as some minor checking of valid page links. I have also done small security audits on code I come across to find any problematic security holes on our website. Examples include finding insecure password management, information leakage relating to accounts, cross-site scripting (xss) bugs targeting privileged users, and password audits on all accounts with heightened privileges. \nI have been a main driving force behind the foundational work for a lot of the recent front-end additions at StateFoodSafety.com. A few examples of these include: our recent move to Bootstrap; all of the modal windows contained on the website; the course and group purchasing systems; et al. I have learned a lot from this project and have started to expand my knowledge past what is being used by StateFoodSafety.com. In an effort to ever expand my knowledge and experience I am now looking to start new and exciting projects in the near future.",
+		"view": "https://www.statefoodsafety.com",
+		"skills": [
+			"Smarty",
+			"Bootstrap",
+			"Scss",
+			"Javascript",
+			"jQuery",
+			"ExtJs",
+			"Ajax",
+			"Php",
+			"MySql",
+			"Composer"
+		],
+		"assets": {
+			"mobile": "http://placehold.it/360x640",
+			"tablet": "http://placehold.it/768x1024",
+			"desktop": "http://placehold.it/1366x768"
+		}
+	}, {
+		"title": "AboveTraining Dashboard",
+		"description": "The main powerhouse of AboveTraining is it's customized dashboard that is the driving force for all user and course management, as well as course and certification delivery. This dashboard is used on nearly all of AboveTraining's websites, including StateFoodSafety.com. When this tool was first implemented my main task was overall component theming. Since then I have been lucky enough to build a few applets. One of these applets is used to manage the custom portals for our corporate clients without any intervention, passed the initial setup, of our web development team. The entirety of the dashboard (including applets) are written in Ext JS, which is a javascript web application framework.",
+		"noView_": "To view this you must buy a product from StateFoodSafety.com",
+		"skills": [
+			"Scss",
+			"Javascript",
+			"ExtJs",
+			"Ajax",
+			"Php",
+			"MySql"
+		],
+		"assets": {
+			"mobile": "http://placehold.it/360x640",
+			"tablet": "http://placehold.it/768x1024",
+			"desktop": "http://placehold.it/1366x768"
+		}
+	}]
+}

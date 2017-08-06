@@ -1,0 +1,86 @@
+// main: styles.scss
+/*** HELPER CLASSES ***/
+.clear {
+	clear: both;
+}
+
+.absVCenter {
+	//Absolute vertical center
+	position         : absolute;
+	top              : 50%;
+	left             : 0;
+	-webkit-transform: translateY(-50%);
+	-ms-transform    : translateY(-50%);
+	transform        : translateY(-50%);
+
+	&.txtCenter {
+		right     : 0;
+		text-align: center;
+	}
+
+	&.absHCenter {
+		left             : 50%;
+		right            : initial;
+		-webkit-transform: translate(-50%,-50%);
+		-ms-transform    : translate(-50%,-50%);
+		transform        : translate(-50%,-50%);
+	}
+}
+
+.item-tag {
+	@include tag();
+}
+
+.site-button {
+	@include site-button();
+}
+
+.separator-line {
+	border-color: $section-separator-color;
+}
+
+.container-spacing {
+	@include container-spacing();
+}
+
+img.image-spacing {
+	@media(min-width: $screen-sm) {
+		 @include image-spacing();
+	}
+}
+
+img.desaturate {
+	@include webkit(filter, grayscale(100%));
+}
+
+.h1-heading {
+	@include h1-heading();
+}
+
+.h2-heading {
+	@include h2-heading();
+}
+
+.h3-heading {
+	@include h3-heading();
+
+	&.section {
+		@include h3-heading($section-text: true);
+	}
+}
+
+.body-title {
+	@include body-title();
+
+	&.section {
+		@include body-title($section-text: true);
+	}
+}
+
+.body-text {
+	@include body-text();
+
+	&.section {
+		@include body-text($section-text: true);
+	}
+}

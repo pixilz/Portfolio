@@ -1,0 +1,41 @@
+{
+	"skills": [{
+		"name": "Languages",
+		"tags": true,
+		"items": [
+			"Scss",
+			"Javascript",
+			"NodeJs",
+			"jQuery",
+			"ExtJs",
+			"Bootstrap",
+			"MySql",
+			"Smarty",
+			"Pug/Jade",
+			"Php",
+			"Python"
+		]
+	}, {
+		"name": "Tools",
+		"tags": false,
+		"items": [
+			"Git",
+			"Bash",
+			"Gulp",
+			"Compass",
+			"Adobe Photoshop",
+			"Adobe Illustrator"
+		]
+	},{
+		"name": "Philosophies",
+		"tags": false,
+		"items": [
+			"Agile Development (SCRUM)",
+			"Mobile first development",
+			"Responsive development",
+			"Test driven development",
+			"ECMAscript 6",
+			"SEO"
+		]
+	}]
+}

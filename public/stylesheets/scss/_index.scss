@@ -1,0 +1,261 @@
+// main: styles.scss
+
+%beforeIcon {
+	font-size: 24px;
+	color    : lighten($font-color, 10%);
+	position : absolute;
+	left     : -25px;
+	top      : 50%;
+	@include transform(translateY(-50%));
+}
+
+body.indexBody {
+	* {
+		z-index: 20; //This is here in order to make everything float above the fixed hero image.
+	}
+
+	.img-responsive {
+		margin: 0 auto;
+	}
+
+	.h2-hero {
+		padding      : 10px 0;
+		border-top   : 1px solid $section-separator-color;
+		border-bottom: 1px solid $section-separator-color;
+		margin-left  : auto;
+		margin-right : auto;
+	}
+
+	#section-intro {
+		position: relative;
+		left    : 0;
+		top     : 0;
+		z-index : 10;
+	}
+
+	#logo-section {
+		position  : absolute;
+		top       : 10%;
+		text-align: center;
+		z-index   : 99;
+		width     : 100%;
+	}
+
+	#section-profileImage {
+		overflow  : hidden;
+		position  : relative;
+		height    : 600px;
+		margin    : 0 -15px;
+		max-height: 1000px;
+		min-height: 525px;
+		@media(min-width: 1500px) {
+			height: 700px;
+		}
+
+		div {
+			min-width: 900px;
+			height   : 100%;
+
+			img {
+				position : fixed;
+				min-width: 900px;
+			}
+		}
+	}
+
+	.main-row {
+		background-color: #fff;
+		position        : relative;
+
+		.main-row-title-line {
+			width : 50px;
+			margin: 15px 0 0;
+		}
+	}
+
+	#section-about-col {
+		background-color: $section-color;
+	}
+
+	#section-about {
+		overflow: hidden;
+	}
+
+	.why-me-row {
+		background-color: $section-color;
+		color           : $section-font-color;
+	}
+
+	.skills-row {
+		.skills-item-container {
+			&.skill-tags .skill {
+				@include tag();
+			}
+
+			&.skill-check {
+				padding-bottom: 15px;
+				@media(min-width: $screen-sm) {
+					margin-right: 100px;
+					display     : inline-block;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				.skill-items {
+					padding-top: 15px;
+				}
+
+				.skill {
+					margin-left : 20px;
+					padding-left: 20px;
+					position    : relative;
+
+					&:before {
+						font-family: "Material Icons";
+						content    : "\e876";
+						position   : absolute;
+						top        : 50%;
+						left       : 0;
+						transform  : translateY(-50%);
+					}
+				}
+			}
+		}
+	}
+
+	.contact-row {
+		background-color: $section-color;
+		color           : $section-font-color;
+
+		#contactMeSection {
+			form {
+				.submitBtn {
+					@include site-button($width: 304px);
+				}
+
+				 > input,
+				> div {
+					width: 304px;
+				}
+
+				.g-recaptcha {
+					margin-top: 20px;
+				}
+
+				> textarea {
+					width: 304px;
+				}
+
+				 > input:not([type="submit"]),
+				> textarea {
+					display         : block;
+					padding         : 0;
+					border          : none;
+					background-color: transparent;
+					border-bottom   : solid 2px #969696;
+					transition      : border 0.3s;
+					resize          : none;
+					height          : 25px;
+					margin-top      : 20px;
+
+					&:focus {
+						outline      : none;
+						border-bottom: solid 2px $section-color;
+					}
+				}
+			}
+		}
+	}
+
+	.portfolio-row {
+		.project-container {
+			.project-title {
+				font-size  : 20px;
+				font-weight: 300;
+			}
+		}
+	}
+
+	.section-title {
+		span {
+			display: inline-block;
+		}
+
+		&.white-section-title {
+			position : relative;
+			max-width: 800px;
+
+			span {
+				border-color: lighten($font-color, 25%);
+			}
+		}
+	}
+
+	.section-text,
+	.section-title {
+		text-align: center;
+		@media(min-width: $screen-sm) {
+			text-align: left;
+		}
+	}
+
+	.resume-section-row {
+		.resume-row {
+			max-width   : 800px;
+			margin      : 0 auto;
+			padding-left: 20px;
+
+			.resume-titles {
+				float: left;
+
+				.resume-subtitle {
+					font-style: italic;
+				}
+			}
+
+			.resume-dates {
+				clear    : both;
+				min-width: 200px;
+				@media(min-width: $screen-xs) {
+					float: right;
+					clear: none;
+				}
+			}
+
+			.resume-list {
+				> ul > li {
+					display : block;
+					position: relative;
+
+					.arrow {
+						position: relative;
+					}
+
+					&:not(.no-arrow)::before,
+					.arrow::before {
+						content    : '\e5CC';
+						font-family: 'material icons';
+						@extend %beforeIcon;
+					}
+
+					ul {
+						padding-left: 20px;
+
+						li {
+							position: relative;
+							display : block;
+
+							&::before {
+								height     : 200%;
+								font-family: $font-family;
+								content    : '-';
+								@extend %beforeIcon;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

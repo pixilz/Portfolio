@@ -1,0 +1,15 @@
+{
+	"list": [{
+		"title": "Problem Solver",
+		"description": "One of my favorite past times in the world is discovering and solving puzzles. I love coding because of this challenge. I've found that the harder a coding challenge the more excited I get, whether that be learning new languages, frameworks, or other tools; or just using the knowledge I already have to solve a problem that I've never encountered. However, coding challenges aren't the only things I enjoy looking at from a new perspective; the way we approach problems and start new everyday projects can always be improved to become more graceful, understandable, and efficient."
+	}, {
+		"title": "Best Practice",
+		"description": "I've done a substantial amount of research into a wide variety of development subjects. These range from: gaming, mobile apps, full stack web development, and secure developent. Learning all of these different ideologies have helped me constantly refine and develop better ways to handle every situation I am up against. Learning all of these different ideologies have helped me constantly refine and develop better ways to handle every situation I am up against. Looking at general standards like the Google and W3Schools javascript standards provide a way to easily learn and code with best coding guidelines in mind. In development there are many ways to solve problems, but some are far more efficient and easier to maintain and read. When coding I work to be consistent in all of my code and elegant in my solutions."
+	}, {
+		"title": "Passionate",
+		"description": "I was raised on logic puzzles and games, when I became a teenager the skills that had grown as I grew, translated perfectly into the role of a developer. Since my first large programming projects in highschool when I created simple little video games, I have had an unquenchable thirst to learn and develop in new and exciting ways. I love what I do, and plan to continue for a long time."
+	}, {
+		"title": "Adaptable",
+		"description": "As a developer I love learning new things that can either make my current understanding of code better or teach me something entirely new. This leads to a lot of self improvement in everything I do. Because I have done this so often in my professional life it has carried over into my personal life to the point that I love to constantly strive and push myself to my limits to find new and exciting ways to think about and do things."
+	}]
+}
