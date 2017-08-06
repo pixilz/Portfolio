@@ -403,7 +403,7 @@ body.indexBody .contact-row {
     padding: 0;
     border: none;
     background-color: transparent;
-    border-bottom: solid 2px #969696;
+    border-bottom: solid 2px #7d7d7d;
     transition: border 0.3s;
     resize: none;
     height: 25px;
@@ -411,11 +411,31 @@ body.indexBody .contact-row {
     body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus,
     body.indexBody .contact-row #contactMeSection form > textarea:focus {
       outline: none;
-      border-bottom: solid 2px #263238; }
+      border-bottom: solid 2px #fff; }
 
 body.indexBody .portfolio-row .project-container .project-title {
   font-size: 20px;
   font-weight: 300; }
+
+body.indexBody .portfolio-row .project-container .project-asset-container {
+  position: relative; }
+  body.indexBody .portfolio-row .project-container .project-asset-container img {
+    width: 100%; }
+  body.indexBody .portfolio-row .project-container .project-asset-container .project-desktop-asset {
+    box-shadow: -1px 0 3px rgba(0, 0, 0, 0.12);
+    width: 75%; }
+  body.indexBody .portfolio-row .project-container .project-asset-container .project-tablet-asset {
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.16);
+    width: 25%;
+    position: absolute;
+    right: 10%;
+    bottom: 0; }
+  body.indexBody .portfolio-row .project-container .project-asset-container .project-mobile-asset {
+    box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19);
+    width: 15%;
+    position: absolute;
+    right: 0;
+    bottom: -1px; }
 
 body.indexBody .section-title span {
   display: inline-block; }

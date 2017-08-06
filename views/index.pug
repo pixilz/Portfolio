@@ -69,12 +69,15 @@ block content
 						.project-title.body-title= project.title
 						hr.main-row-title-line
 						.project-asset-container
-							.project-desktop-asset
-								img(src=project.assets.desktop)
-							//-.project-tablet-asset
-								img(src=project.assets.tablet)
-							.project-mobile-asset
-								img(src=project.assets.mobile)
+							if project.assets.desktop
+								.project-desktop-asset
+									img(src=project.assets.desktop)
+							if project.assets.tablet
+								.project-tablet-asset
+									img(src=project.assets.tablet)
+							if project.assets.mobile
+								.project-mobile-asset
+									img(src=project.assets.mobile)
 						.project-description.body-text!= project.description
 						.project-tags
 							each tag in project.skills
@@ -109,18 +112,6 @@ block content
 						.skill-items
 							each skill in skillset.items
 								.skill #{skill}
-					.languages-container
-						.languages-title.body-title Languages / Technologies
-						each language in skills.Languages
-							.language #{language}
-					.tools-container
-						.tools-title.body-title Tools
-						each tool in skills.Tools
-							.tool #{tool}
-					.philosophies-container
-						.philosophies-title.body-title Philosophies
-						each philo in skills.Philosophies
-							.philosophy #{philo}
 		.row.main-row.contact-row.container-spacing
 			#contactMeSection.col-xs-12
 				form(action='contact.php', method='post')
