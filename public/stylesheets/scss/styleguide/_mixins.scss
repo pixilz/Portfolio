@@ -60,6 +60,7 @@
 	color           : $section-font-color;
 	text-align      : center;
 	border-radius   : 3px;
+	text-decoration: none;
 
 	&:last-child {
 		margin-right: 0;
@@ -67,6 +68,8 @@
 
 	&:hover {
 		background-color: $button-hover-color;
+		color: $section-font-color;
+		text-decoration: none;
 	}
 }
 

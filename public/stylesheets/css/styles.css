@@ -39,11 +39,14 @@
   background-color: #a94442;
   color: #fff;
   text-align: center;
-  border-radius: 3px; }
+  border-radius: 3px;
+  text-decoration: none; }
   .site-button:last-child {
     margin-right: 0; }
   .site-button:hover {
-    background-color: #843534; }
+    background-color: #843534;
+    color: #fff;
+    text-decoration: none; }
 
 .separator-line {
   border-color: #a94442; }
@@ -226,12 +229,12 @@ div.footer-row {
     div.footer-row .footer-container .footer-container-row > div {
       padding: 0;
       text-align: center; }
-      div.footer-row .footer-container .footer-container-row > div .social-media-links i {
-        font-size: 20px; }
-        div.footer-row .footer-container .footer-container-row > div .social-media-links i:not(:first-child) {
-          margin-left: 5px; }
-        div.footer-row .footer-container .footer-container-row > div .social-media-links i:not(:last-child) {
-          margin-right: 5px; }
+      div.footer-row .footer-container .footer-container-row > div .social-media-links a {
+        margin-left: 5px; }
+        div.footer-row .footer-container .footer-container-row > div .social-media-links a:first-child {
+          margin: 0; }
+        div.footer-row .footer-container .footer-container-row > div .social-media-links a i {
+          font-size: 20px; }
       div.footer-row .footer-container .footer-container-row > div .copyright-text {
         padding-top: 10px; }
     @media (min-width: 992px) {
@@ -385,20 +388,23 @@ body.indexBody .contact-row {
     background-color: #a94442;
     color: #fff;
     text-align: center;
-    border-radius: 3px; }
+    border-radius: 3px;
+    text-decoration: none; }
     body.indexBody .contact-row #contactMeSection form .submitBtn:last-child {
       margin-right: 0; }
     body.indexBody .contact-row #contactMeSection form .submitBtn:hover {
-      background-color: #843534; }
-  body.indexBody .contact-row #contactMeSection form > input,
-  body.indexBody .contact-row #contactMeSection form > div {
+      background-color: #843534;
+      color: #fff;
+      text-decoration: none; }
+  body.indexBody .contact-row #contactMeSection form > div,
+  body.indexBody .contact-row #contactMeSection form > input {
     width: 304px; }
   body.indexBody .contact-row #contactMeSection form .g-recaptcha {
     margin-top: 20px; }
   body.indexBody .contact-row #contactMeSection form > textarea {
     width: 304px; }
-  body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]),
-  body.indexBody .contact-row #contactMeSection form > textarea {
+  body.indexBody .contact-row #contactMeSection form > textarea,
+  body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]) {
     display: block;
     padding: 0;
     border: none;
@@ -408,8 +414,8 @@ body.indexBody .contact-row {
     resize: none;
     height: 25px;
     margin-top: 20px; }
-    body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus,
-    body.indexBody .contact-row #contactMeSection form > textarea:focus {
+    body.indexBody .contact-row #contactMeSection form > textarea:focus,
+    body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus {
       outline: none;
       border-bottom: solid 2px #fff; }
 

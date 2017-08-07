@@ -97,6 +97,7 @@ body.indexBody {
 				@media(min-width: $screen-sm) {
 					margin-right: 100px;
 					display     : inline-block;
+
 					&:last-child {
 						margin-right: 0;
 					}
@@ -134,8 +135,8 @@ body.indexBody {
 					@include site-button($width: 304px);
 				}
 
-				 > input,
-				> div {
+				 > div,
+				> input {
 					width: 304px;
 				}
 
@@ -147,8 +148,8 @@ body.indexBody {
 					width: 304px;
 				}
 
-				 > input:not([type="submit"]),
-				> textarea {
+				 > textarea,
+				> input:not([type="submit"]) {
 					display         : block;
 					padding         : 0;
 					border          : none;
@@ -174,28 +175,33 @@ body.indexBody {
 				font-size  : 20px;
 				font-weight: 300;
 			}
+
 			.project-asset-container {
 				position: relative;
+
 				img {
 					width: 100%;
 				}
+
 				.project-desktop-asset {
 					box-shadow: -1px 0 3px rgba(0,0,0,0.12);
-					width: 75%;
+					width     : 75%;
 				}
+
 				.project-tablet-asset {
 					box-shadow: -3px 0 6px rgba(0,0,0,0.16);
-					width: 25%;
-					position: absolute;
-					right: 10%;
-					bottom: 0;
+					width     : 25%;
+					position  : absolute;
+					right     : 10%;
+					bottom    : 0;
 				}
+
 				.project-mobile-asset {
 					box-shadow: -7px 0 14px rgba(0,0,0,0.19);
-					width: 15%;
-					position: absolute;
-					right: 0;
-					bottom: -1px;
+					width     : 15%;
+					position  : absolute;
+					right     : 0;
+					bottom    : -1px;
 				}
 			}
 		}
