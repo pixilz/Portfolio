@@ -16,9 +16,9 @@
 			"Composer"
 		],
 		"assets": {
-			"mobile": "http://placehold.it/360x640",
-			"tablet": "http://placehold.it/768x1024",
-			"desktop": "http://placehold.it/1366x768"
+			"desktop": "/images/projects/StateFoodSafety/1366x768.png",
+			"tablet": "/images/projects/StateFoodSafety/768x1024.png",
+			"mobile": "/images/projects/StateFoodSafety/360x640.png"
 		}
 	}, {
 		"title": "AboveTraining Dashboard",

@@ -184,7 +184,7 @@ body.indexBody {
 				}
 
 				.project-desktop-asset {
-					box-shadow: -1px 0 3px rgba(0,0,0,0.12);
+					box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.12), 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
 					width     : 75%;
 				}
 
@@ -197,11 +197,11 @@ body.indexBody {
 				}
 
 				.project-mobile-asset {
-					box-shadow: -7px 0 14px rgba(0,0,0,0.19);
+					box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19), 1px 0px 3px 1px rgba(0, 0, 0, 0.1);
 					width     : 15%;
 					position  : absolute;
 					right     : 0;
-					bottom    : -1px;
+					bottom    : 0;
 				}
 			}
 		}

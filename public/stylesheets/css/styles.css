@@ -428,7 +428,7 @@ body.indexBody .portfolio-row .project-container .project-asset-container {
   body.indexBody .portfolio-row .project-container .project-asset-container img {
     width: 100%; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-desktop-asset {
-    box-shadow: -1px 0 3px rgba(0, 0, 0, 0.12);
+    box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.12), 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
     width: 75%; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-tablet-asset {
     box-shadow: -3px 0 6px rgba(0, 0, 0, 0.16);
@@ -437,11 +437,11 @@ body.indexBody .portfolio-row .project-container .project-asset-container {
     right: 10%;
     bottom: 0; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-mobile-asset {
-    box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19);
+    box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19), 1px 0px 3px 1px rgba(0, 0, 0, 0.1);
     width: 15%;
     position: absolute;
     right: 0;
-    bottom: -1px; }
+    bottom: 0; }
 
 body.indexBody .section-title span {
   display: inline-block; }
