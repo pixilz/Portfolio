@@ -229,6 +229,12 @@ div.footer-row {
     div.footer-row .footer-container .footer-container-row > div {
       padding: 0;
       text-align: center; }
+      div.footer-row .footer-container .footer-container-row > div a {
+        color: #fff; }
+        div.footer-row .footer-container .footer-container-row > div a:hover {
+          color: #4F8FF6; }
+      div.footer-row .footer-container .footer-container-row > div .source-code-link {
+        text-decoration: underline; }
       div.footer-row .footer-container .footer-container-row > div .social-media-links a {
         margin-left: 5px; }
         div.footer-row .footer-container .footer-container-row > div .social-media-links a:first-child {

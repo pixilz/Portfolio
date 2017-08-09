@@ -11,6 +11,17 @@ div.footer-row {
 				padding   : 0;
 				text-align: center;
 
+				a {
+					color: #fff;
+					&:hover {
+						color: #4F8FF6;
+					}
+				}
+
+				.source-code-link {
+					text-decoration: underline;
+				}
+
 				.social-media-links {
 					a {
 						margin-left: 5px;
