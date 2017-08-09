@@ -328,10 +328,18 @@ body.indexBody #section-profileImage {
 
 body.indexBody .main-row {
   background-color: #fff;
-  position: relative; }
+  position: relative;
+  text-align: center; }
+  @media (min-width: 768px) {
+    body.indexBody .main-row {
+      text-align: left; } }
   body.indexBody .main-row .main-row-title-line {
     width: 50px;
-    margin: 15px 0 0; }
+    margin: 15px auto 0; }
+    @media (min-width: 768px) {
+      body.indexBody .main-row .main-row-title-line {
+        margin-right: 0;
+        margin-left: 0; } }
 
 body.indexBody #section-about-col {
   background-color: #263238; }
@@ -363,16 +371,22 @@ body.indexBody .skills-row .skills-item-container.skill-check {
   body.indexBody .skills-row .skills-item-container.skill-check .skill-items {
     padding-top: 15px; }
   body.indexBody .skills-row .skills-item-container.skill-check .skill {
-    margin-left: 20px;
-    padding-left: 20px;
     position: relative; }
+    @media (min-width: 768px) {
+      body.indexBody .skills-row .skills-item-container.skill-check .skill {
+        margin-left: 20px;
+        padding-left: 20px; } }
     body.indexBody .skills-row .skills-item-container.skill-check .skill:before {
       font-family: "Material Icons";
       content: "\e876";
       position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%); }
+      margin-left: -20px; }
+      @media (min-width: 768px) {
+        body.indexBody .skills-row .skills-item-container.skill-check .skill:before {
+          margin: 0;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%); } }
 
 body.indexBody .contact-row {
   background-color: #263238;
@@ -400,7 +414,11 @@ body.indexBody .contact-row {
   body.indexBody .contact-row #contactMeSection form > input {
     width: 304px; }
   body.indexBody .contact-row #contactMeSection form .g-recaptcha {
-    margin-top: 20px; }
+    margin: 20px auto 0; }
+    @media (min-width: 768px) {
+      body.indexBody .contact-row #contactMeSection form .g-recaptcha {
+        margin-left: 0;
+        margin-right: 0; } }
   body.indexBody .contact-row #contactMeSection form > textarea {
     width: 304px; }
   body.indexBody .contact-row #contactMeSection form > textarea,
@@ -413,11 +431,28 @@ body.indexBody .contact-row {
     transition: border 0.3s;
     resize: none;
     height: 25px;
-    margin-top: 20px; }
+    margin: 20px auto 0; }
+    @media (min-width: 768px) {
+      body.indexBody .contact-row #contactMeSection form > textarea,
+      body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]) {
+        margin-left: 0;
+        margin-right: 0; }
+        body.indexBody .contact-row #contactMeSection form > textarea:first-child,
+        body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):first-child {
+          margin-top: 40px; } }
     body.indexBody .contact-row #contactMeSection form > textarea:focus,
     body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus {
       outline: none;
       border-bottom: solid 2px #fff; }
+  body.indexBody .contact-row #contactMeSection .references-container .reference .reference-text {
+    font-size: 13px; }
+  body.indexBody .contact-row #contactMeSection .references-container .reference .reference-author {
+    font-size: 12px;
+    font-style: italic;
+    display: inline-block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    body.indexBody .contact-row #contactMeSection .references-container .reference .reference-author::before {
+      content: '~ '; }
 
 body.indexBody .portfolio-row .project-container .project-title {
   font-size: 20px;

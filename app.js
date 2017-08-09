@@ -6,7 +6,9 @@ var express = require('express'),
 	bodyParser = require('body-parser');
 
 //Routes
-var routes = require('./routes/index');
+var routes = {
+	index: require('./routes/index')
+};
 /*
 var testPage = require('./routes/test');
 var pluginTest = require('./routes/pluginTest');
@@ -35,7 +37,7 @@ app.use(require('node-sass-middleware')({
 app.use(express.static(path.join(__dirname, 'public')));
 
 //views
-app.use('/', routes);
+app.use('/', routes.index);
 //app.use('/test', testPage);
 //app.use('/pluginTest', pluginTest);
 

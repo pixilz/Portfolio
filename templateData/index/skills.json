@@ -3,17 +3,16 @@
 		"name": "Languages",
 		"tags": true,
 		"items": [
-			"Scss",
-			"Javascript",
-			"NodeJs",
+			"Sass",
+			"JavaScript",
+			"Node.Js",
 			"jQuery",
-			"ExtJs",
+			"Ext Js",
 			"Bootstrap",
-			"MySql",
+			"MySQL",
 			"Smarty",
 			"Pug/Jade",
-			"Php",
-			"Python"
+			"PHP"
 		]
 	}, {
 		"name": "Tools",

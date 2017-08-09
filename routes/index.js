@@ -1,8 +1,8 @@
 var express = require('express'),
 	router = express.Router(),
-	resume = require('../templateData/index/resume.json'),
 	entities = require('html-entities').AllHtmlEntities,
 	moment = require('moment'),
+	references = require('../templateData/index/references.json').inuse,
 	skills = require('../templateData/index/skills.json').skills,
 	projects = require('../templateData/index/projects.json'),
 	whyMe = require('../templateData/index/whyMe.json');
@@ -11,9 +11,9 @@ var express = require('express'),
 router.get('/', function (req, res) {
 	res.render('index', {
 		entities: entities,
-		title: entities.decode('Zoë Clarno'),
+		title: entities.decode('Portfolio - Zoë Clarno'),
 		year: moment().format('YYYY'),
-		resume: resume,
+		references: references,
 		skills: skills,
 		whyMe: whyMe,
 		pObj: projects

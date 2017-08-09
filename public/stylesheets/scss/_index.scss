@@ -66,10 +66,19 @@ body.indexBody {
 	.main-row {
 		background-color: #fff;
 		position        : relative;
+		text-align: center;
+
+		@media(min-width: $screen-sm) {
+			text-align: left;
+		}
 
 		.main-row-title-line {
 			width : 50px;
-			margin: 15px 0 0;
+			margin: 15px auto 0;
+			@media(min-width: $screen-sm) {
+				margin-right: 0;
+				margin-left: 0;
+			}
 		}
 	}
 
@@ -108,17 +117,25 @@ body.indexBody {
 				}
 
 				.skill {
-					margin-left : 20px;
-					padding-left: 20px;
 					position    : relative;
+
+					@media(min-width: $screen-sm) {
+						margin-left : 20px;
+						padding-left: 20px;
+					}
 
 					&:before {
 						font-family: "Material Icons";
 						content    : "\e876";
 						position   : absolute;
-						top        : 50%;
-						left       : 0;
-						transform  : translateY(-50%);
+						margin-left: -20px;
+
+						@media(min-width: $screen-sm) {
+							margin: 0;
+							top        : 50%;
+							left       : 0;
+							transform  : translateY(-50%);
+						}
 					}
 				}
 			}
@@ -141,7 +158,11 @@ body.indexBody {
 				}
 
 				.g-recaptcha {
-					margin-top: 20px;
+					margin: 20px auto 0;
+					@media(min-width: $screen-sm) {
+						margin-left: 0;
+						margin-right: 0;
+					}
 				}
 
 				> textarea {
@@ -158,11 +179,37 @@ body.indexBody {
 					transition      : border 0.3s;
 					resize          : none;
 					height          : 25px;
-					margin-top      : 20px;
+					margin: 20px auto 0;
+
+
+					@media(min-width: $screen-sm) {
+						margin-left: 0;
+						margin-right: 0;
+
+						&:first-child {
+							margin-top: 40px;
+						}
+					}
 
 					&:focus {
 						outline      : none;
 						border-bottom: solid 2px $section-font-color;
+					}
+				}
+			}
+			.references-container {
+				.reference {
+					.reference-text {
+						font-size: 13px;
+					}
+					.reference-author {
+						font-size: 12px;
+						font-style: italic;
+						display: inline-block;
+						border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+						&::before {
+							content: '~ ';
+						}
 					}
 				}
 			}

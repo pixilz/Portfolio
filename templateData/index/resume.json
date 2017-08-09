@@ -1,4 +1,11 @@
 {
+    "Phone": "801-919-9496",
+    "Email": "ZoeClarno@gmail.com",
+    "Name": "Zoë Clarno",
+    "Title": "JavaScript Developer",
+    "Skills": [
+
+    ],
     "Education": [{
         "title": "High School Diploma (05/2013)",
         "subtitle": "Utah County Academy of Sciences",
@@ -18,8 +25,7 @@
             "CS 1400 (C#)",
             "CS 1410 (C++)",
             "CS 2420 (C++)",
-            "CS 2810 (Assembly)",
-            "Designed &amp; Developed website for a campus club"
+            "CS 2810 (Assembly)"
         ]
     }],
     "Work Experience": [{
@@ -35,16 +41,16 @@
             "Largely responsible for promoting back linking"
         ]
     }, {
-        "title": "Web Developer",
+        "title": "JavaScript Developer",
         "subtitle": "Abovetraining (StateFoodSafety)",
         "date": "2014/02 - Present",
         "location": "Orem, UT",
         "country": "USA",
         "list": [
-            "li-list1",
             "Assisted in developing large scale web applications",
             "Experience working with an extensive backend database",
             "Developed skills in front end web technologies",
+            "Lead JavaScript standards and pushed for a more modularized and editable codebase.",
             "Experience developing html email templates from scratch",
             "Responsible for developing front-end automation testing"
         ],
@@ -52,12 +58,12 @@
             "title": "Technical experience in:",
             "list": [
                 "Agile Development (SCRUM)",
-                "Javascript (JQuery, Extjs)",
-                "NodeJs (Selenium)",
+                "Javascript (jQuery, Ext Js)",
+                "Node.Js (Selenium)",
                 "HTML (Bootstrap)",
-                "Css (Scss, Responsivity)",
-                "Php (Composer, Smarty)",
-                "Sql (MySql)"
+                "CSS (Sass, Responsivity)",
+                "PHP (Composer, Smarty)",
+                "SQL (MySQL)"
             ]
         }
     }]
