@@ -47,20 +47,20 @@ block content
 			#section-about-col.col-xs-12
 				.row
 					#section-about.container-spacing
-						.col-xs-12.col-md-10.col-md-offset-1
+						.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 							.section-title.h3-heading.section
 								span About Me
 							hr.main-row-title-line.separator-line
-						.col-xs-12.col-md-10.col-md-offset-1
+						.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 							.section-text.body-text.section
 								| I am a young and dedicated professional developer looking to consistently chanllenge myself and contribute to a community. I enjoy learning new topics and pick up on things quickly. I spend most of my time playing games and researching various personal projects. I have recently started participating in the open source community, contributing to largely used projects such as the Atom Text Editor.
 						.col-xs-12
 							br
 							br
-						.col-xs-12.col-md-10.col-md-offset-1
+						.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 							a.aboutSectionBtn.site-button(href='/Resume') View Resume
 		.row.main-row.portfolio-row.container-spacing
-			.col-xs-12.col-md-10.col-md-offset-1
+			.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.main-row-title.h3-heading Portfolio / My Projects
 				hr.main-row-title-line.separator-line
 				each project in pObj.projects
@@ -86,7 +86,7 @@ block content
 						else if project.noView
 							.project-no-view= project.noView
 		.row.main-row.why-me-row.container-spacing
-			.col-xs-12.col-md-10.col-md-offset-1
+			.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.main-row-title.section-title.h3-heading.section Why Me?
 				hr.main-row-title-line.separator-line
 				.row
@@ -102,7 +102,7 @@ block content
 							.col-xs-12.hidden-md.hidden-lg
 								hr.why-me-line-row.separator-line
 		.row.main-row.skills-row.container-spacing
-			.col-xs-12.col-md-10.col-md-offset-1
+			.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.main-row-title.h3-heading Skills
 				hr.main-row-title-line.separator-line
 				each skillset in skills
@@ -112,7 +112,7 @@ block content
 							each skill in skillset.items
 								.skill #{skill}
 		.row.main-row.contact-row.container-spacing
-			#contactMeSection.col-xs-12.col-md-10.col-md-offset-1
+			#contactMeSection.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.row
 					.col-xs-12.col-sm-6
 						form(action='javascript:void()')
@@ -139,7 +139,7 @@ block content
 			.footer-container
 				.footer-container-row
 					.row
-						.col-xs-12.col-md-10.col-md-offset-1
+						.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 							.row
 								.col-xs-12.col-md-4.col-md-push-8
 									.social-media-links
