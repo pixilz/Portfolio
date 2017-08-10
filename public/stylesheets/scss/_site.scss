@@ -17,3 +17,23 @@ body {
 	font-size  : $font-size;
 	font-family: $font-family;
 }
+
+$placeholderColor: #fff;
+$placeholderOpacity: 0.65;
+
+::-webkit-input-placeholder { /* Chrome */
+  color: $placeholderColor;
+	opacity: $placeholderOpacity;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: $placeholderColor;
+	opacity: $placeholderOpacity;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: $placeholderColor;
+	opacity: $placeholderOpacity;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+	color: $placeholderColor;
+	opacity: $placeholderOpacity;
+}

@@ -93,6 +93,9 @@ body.indexBody {
 	.why-me-row {
 		background-color: $section-color;
 		color           : $section-font-color;
+		.why-me-box > .body-title {
+			margin-top: 0;
+		}
 	}
 
 	.skills-row {
@@ -165,10 +168,6 @@ body.indexBody {
 					}
 				}
 
-				> textarea {
-					width: 304px;
-				}
-
 				 > textarea,
 				> input:not([type="submit"]) {
 					display         : block;
@@ -180,7 +179,6 @@ body.indexBody {
 					resize          : none;
 					height          : 25px;
 					margin: 20px auto 0;
-
 
 					@media(min-width: $screen-sm) {
 						margin-left: 0;
@@ -196,6 +194,11 @@ body.indexBody {
 						border-bottom: solid 2px $section-font-color;
 					}
 				}
+
+				> textarea {
+					width: 304px;
+					resize: vertical;
+				}
 			}
 			.references-container {
 				.reference {
@@ -207,6 +210,12 @@ body.indexBody {
 						font-style: italic;
 						display: inline-block;
 						border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+						color: #fff;
+						&:hover {
+							cursor: pointer;
+							color: #4F8FF6;
+							text-decoration: none;
+						}
 						&::before {
 							content: '~ ';
 						}

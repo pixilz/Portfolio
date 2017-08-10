@@ -278,6 +278,26 @@ body {
   font-size: 14px;
   font-family: "Open Sans", sans-serif; }
 
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: #fff;
+  opacity: 0.65; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #fff;
+  opacity: 0.65; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+  opacity: 0.65; }
+
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: #fff;
+  opacity: 0.65; }
+
 body.indexBody .resume-section-row .resume-row .resume-list > ul > li:not(.no-arrow)::before,
 body.indexBody .resume-section-row .resume-row .resume-list > ul > li .arrow::before, body.indexBody .resume-section-row .resume-row .resume-list > ul > li ul li::before {
   font-size: 24px;
@@ -356,6 +376,8 @@ body.indexBody #section-about {
 body.indexBody .why-me-row {
   background-color: #263238;
   color: #fff; }
+  body.indexBody .why-me-row .why-me-box > .body-title {
+    margin-top: 0; }
 
 body.indexBody .skills-row .skills-item-container.skill-tags .skill {
   display: inline-block;
@@ -425,8 +447,6 @@ body.indexBody .contact-row {
       body.indexBody .contact-row #contactMeSection form .g-recaptcha {
         margin-left: 0;
         margin-right: 0; } }
-  body.indexBody .contact-row #contactMeSection form > textarea {
-    width: 304px; }
   body.indexBody .contact-row #contactMeSection form > textarea,
   body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]) {
     display: block;
@@ -450,13 +470,21 @@ body.indexBody .contact-row {
     body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus {
       outline: none;
       border-bottom: solid 2px #fff; }
+  body.indexBody .contact-row #contactMeSection form > textarea {
+    width: 304px;
+    resize: vertical; }
   body.indexBody .contact-row #contactMeSection .references-container .reference .reference-text {
     font-size: 13px; }
   body.indexBody .contact-row #contactMeSection .references-container .reference .reference-author {
     font-size: 12px;
     font-style: italic;
     display: inline-block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff; }
+    body.indexBody .contact-row #contactMeSection .references-container .reference .reference-author:hover {
+      cursor: pointer;
+      color: #4F8FF6;
+      text-decoration: none; }
     body.indexBody .contact-row #contactMeSection .references-container .reference .reference-author::before {
       content: '~ '; }
 

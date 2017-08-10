@@ -38,13 +38,19 @@ $(window).load(function() {
 
 $(function () {
 	$('#contactMeSection textarea').each(function () {
-		this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+		this.setAttribute('style', 'height:' + (this.scrollHeight * 2 + 5) + 'px;overflow-y:hidden;');
 	}).on('input', function () {
 		var $document = $(document),
 			initialScrollTop = $document.scrollTop();
 
+		var currentHeight = parseInt(this.style.height);
+
 		this.style.height = '1px';
 		this.style.height = parseFloat(this.scrollHeight) + 5 + 'px';
+
+		if(parseInt(this.style.height) < currentHeight) {
+			this.style.height = currentHeight + 'px';
+		}
 
 		$document.scrollTop(initialScrollTop);
 	});
