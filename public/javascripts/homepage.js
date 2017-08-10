@@ -57,43 +57,74 @@ $(function () {
 
 	$('.submitBtn').on('click', function() {
 		var $form = $(this).closest('form'),
-		    data = getFormData($form);
+				data = validateForm($form);
 
 			if(data) {
 				console.log(data);
 				//Call API to submit form
 			}
 	});
+
+	$('form.has-validation').find(':input').on('change', function() {
+		removeInvalidMark($(this));
+	});
 });
 
-function getFormData($form) {
-	var emptyValues = [];
+function validateForm($form) {
+	var $inputs = $form.find(':input'),
+		errors = false,
+		formData = {};
 
-	var data = $form.serializeArray().reduce(function(obj, item) {
-		if(!item.value) {
-			emptyValues.push(item.name);
-			emptyValue = true;
+	$.each($inputs, function(i, input) {
+		var $input = $(input);
+
+		if($input.attr('required') && !$input.val().trim()) {
+			//Throw error on input for being empty and required.
+			errors = true;
+			markInputInvalid($input, "This field is required");
+		} else if($input.val().trim() && $input.attr('type') == 'email') {
+			if(!$input.val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+				//Throw error on input for being an invalid email
+				errors = true;
+				markInputInvalid($input, "Please enter a valid email address.");
+			}
+		} else if($input.attr('name') == 'g-recaptcha-response' && !$input.val()){
+			//Recaptcha is required notif window.
+			errors = true;
 		}
 
+		formData[$input.attr('name')] = $input.val();
+	});
+
+	if(errors) return false;
+
+	return formData;
+}
+
+function markInputInvalid($input, error) {
+	if($input.hasClass('invalid-input')) return false;
+
+	$input.addClass('invalid-input');
+	$input.after($('<div></div>', {
+		"text": error,
+		"class": "invalid-input-error"
+	}));
+
+	//Create notif window
+	//Please fill out the fields in red.
+}
+
+function removeInvalidMark($input) {
+	if(!$input.hasClass('invalid-input')) return false;
+
+	$input.removeClass('invalid-input');
+
+	$input.next('.invalid-input-error').remove();
+}
+
+function getFormData($form) {
+	var data = $form.serializeArray().reduce(function(obj, item) {
 		obj[item.name] = item.value;
 		return obj;
 	}, {});
-
-	if(emptyValues.length) {
-		throwFormErrors(emptyValues);
-		return false;
-	} else {
-		return data;
-	}
-}
-
-function throwFormErrors(values) {
-	values.forEach(function(val) {
-		console.log(val);
-		//Pop up notification for each missing item.
-		//[Item Name] is required.
-
-
-		//Potentially replace with webshim.
-	});
 }

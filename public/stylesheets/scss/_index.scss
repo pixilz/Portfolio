@@ -101,7 +101,6 @@ body.indexBody {
 	.skills-row {
 		.skills-item-container {
 			&.skill-tags {
-				max-width: 500px;
 				.skill {
 					@include tag();
 				}

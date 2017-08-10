@@ -122,10 +122,10 @@ block content
 			#contactMeSection.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.row
 					.col-xs-12.col-sm-6
-						form(action='javascript:void()')
-							input(type='text', name='cf_name', placeholder='Name')
-							input(type='text', name='cf_email', placeholder="Email Address")
-							textarea(name='cf_message', placeholder="Message")
+						form.has-validation(action='javascript:void()')
+							input(type='text', name='cf_name', placeholder='Name', required)
+							input(type='email', name='cf_email', placeholder="Email Address", required)
+							textarea(name='cf_message', placeholder="Message", required)
 							.g-recaptcha(data-theme='dark', data-sitekey='6LefjRMUAAAAAEQaJj_IX_xqhgmBcEwioGgIhRXM')
 							.submitBtn Submit
 					.col-xs-12.col-sm-6

@@ -386,23 +386,21 @@ body.indexBody .why-me-row {
   body.indexBody .why-me-row .why-me-box > .body-title {
     margin-top: 0; }
 
-body.indexBody .skills-row .skills-item-container.skill-tags {
-  max-width: 500px; }
-  body.indexBody .skills-row .skills-item-container.skill-tags .skill {
-    display: inline-block;
-    border: 1px solid #000;
-    border-radius: 5px;
-    margin-right: 10px;
-    padding: 2px 10px;
-    text-align: center;
-    margin-top: 15px;
-    /*width: 75px;
+body.indexBody .skills-row .skills-item-container.skill-tags .skill {
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 2px 10px;
+  text-align: center;
+  margin-top: 15px;
+  /*width: 75px;
 	height: 75px;*/
-    border-radius: 75px;
-    display: inline-table; }
-    body.indexBody .skills-row .skills-item-container.skill-tags .skill .tag-text {
-      display: table-cell;
-      vertical-align: middle; }
+  border-radius: 75px;
+  display: inline-table; }
+  body.indexBody .skills-row .skills-item-container.skill-tags .skill .tag-text {
+    display: table-cell;
+    vertical-align: middle; }
 
 body.indexBody .skills-row .skills-item-container.skill-check {
   padding-bottom: 15px; }
