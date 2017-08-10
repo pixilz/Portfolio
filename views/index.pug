@@ -80,7 +80,8 @@ block content
 						.project-description.body-text!= project.description
 						.project-tags
 							each tag in project.skills
-								.item-tag= tag
+								.item-tag
+									.tag-text= tag
 						if project.view
 							a.project-view-btn.site-button(href=project.view target="_blank" rel="nofollow") View
 						else if project.noView
@@ -115,7 +116,8 @@ block content
 						.skill-title.body-title #{skillset.name}
 						.skill-items
 							each skill in skillset.items
-								.skill #{skill}
+								.skill
+									.tag-text #{skill}
 		.row.main-row.contact-row.container-spacing
 			#contactMeSection.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
 				.row

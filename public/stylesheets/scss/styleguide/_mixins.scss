@@ -78,9 +78,18 @@
 	border       : 1px solid #000;
 	border-radius: 5px;
 	margin-right : 10px;
-	padding      : 2px 5px;
+	padding      : 2px 10px;
 	text-align   : center;
 	margin-top: 15px;
+
+	/*width: 75px;
+	height: 75px;*/
+	border-radius: 75px;
+	display: inline-table;
+	.tag-text {
+		display: table-cell;
+		vertical-align: middle;
+	}
 }
 @mixin container-spacing() {
 	padding-bottom: 40px;

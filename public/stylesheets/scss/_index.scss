@@ -100,8 +100,11 @@ body.indexBody {
 
 	.skills-row {
 		.skills-item-container {
-			&.skill-tags .skill {
-				@include tag();
+			&.skill-tags {
+				max-width: 500px;
+				.skill {
+					@include tag();
+				}
 			}
 
 			&.skill-check {
@@ -260,6 +263,11 @@ body.indexBody {
 					bottom    : 0;
 				}
 			}
+
+			.project-description {
+				@include line-calc(35px);
+			}
+
 		}
 	}
 
