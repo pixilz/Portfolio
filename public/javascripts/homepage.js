@@ -48,4 +48,46 @@ $(function () {
 
 		$document.scrollTop(initialScrollTop);
 	});
+
+	$('.submitBtn').on('click', function() {
+		var $form = $(this).closest('form'),
+		    data = getFormData($form);
+
+			if(data) {
+				console.log(data);
+				//Call API to submit form
+			}
+	});
 });
+
+function getFormData($form) {
+	var emptyValues = [];
+
+	var data = $form.serializeArray().reduce(function(obj, item) {
+		if(!item.value) {
+			emptyValues.push(item.name);
+			emptyValue = true;
+		}
+
+		obj[item.name] = item.value;
+		return obj;
+	}, {});
+
+	if(emptyValues.length) {
+		throwFormErrors(emptyValues);
+		return false;
+	} else {
+		return data;
+	}
+}
+
+function throwFormErrors(values) {
+	values.forEach(function(val) {
+		console.log(val);
+		//Pop up notification for each missing item.
+		//[Item Name] is required.
+
+
+		//Potentially replace with webshim.
+	});
+}

@@ -47,23 +47,20 @@ block content
 			#section-about-col.col-xs-12
 				.row
 					#section-about.container-spacing
-						//.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
-						.col-xs-12
+						.col-xs-12.col-md-10.col-md-offset-1
 							.section-title.h3-heading.section
 								span About Me
 							hr.main-row-title-line.separator-line
-						//.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
-						.col-xs-12
+						.col-xs-12.col-md-10.col-md-offset-1
 							.section-text.body-text.section
 								| I am a young and dedicated professional developer looking to consistently chanllenge myself and contribute to a community. I enjoy learning new topics and pick up on things quickly. I spend most of my time playing games and researching various personal projects. I have recently started participating in the open source community, contributing to largely used projects such as the Atom Text Editor.
 						.col-xs-12
 							br
 							br
-						//.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8
-						.col-xs-12
+						.col-xs-12.col-md-10.col-md-offset-1
 							a.aboutSectionBtn.site-button(href='/Resume') View Resume
 		.row.main-row.portfolio-row.container-spacing
-			.col-xs-12
+			.col-xs-12.col-md-10.col-md-offset-1
 				.main-row-title.h3-heading Portfolio / My Projects
 				hr.main-row-title-line.separator-line
 				each project in pObj.projects
@@ -89,7 +86,7 @@ block content
 						else if project.noView
 							.project-no-view= project.noView
 		.row.main-row.why-me-row.container-spacing
-			.col-xs-12
+			.col-xs-12.col-md-10.col-md-offset-1
 				.main-row-title.section-title.h3-heading.section Why Me?
 				hr.main-row-title-line.separator-line
 				.row
@@ -105,7 +102,7 @@ block content
 							.col-xs-12.hidden-md.hidden-lg
 								hr.why-me-line-row.separator-line
 		.row.main-row.skills-row.container-spacing
-			.col-xs-12
+			.col-xs-12.col-md-10.col-md-offset-1
 				.main-row-title.h3-heading Skills
 				hr.main-row-title-line.separator-line
 				each skillset in skills
@@ -115,7 +112,7 @@ block content
 							each skill in skillset.items
 								.skill #{skill}
 		.row.main-row.contact-row.container-spacing
-			#contactMeSection.col-xs-12
+			#contactMeSection.col-xs-12.col-md-10.col-md-offset-1
 				.row
 					.col-xs-12.col-sm-6
 						form(action='javascript:void()')
@@ -141,18 +138,21 @@ block content
 		.row.footer-row
 			.footer-container
 				.footer-container-row
-					.col-xs-12.col-md-4.col-md-push-8
-						.social-media-links
-							a(href='https://twitter.com/PetalDoe' target="_blank" rel="nofollow")
-								i.fa.fa-twitter-square(aria-hidden="true")
-							a(href='https://github.com/pixilz' target="_blank" rel="nofollow")
-								i.fa.fa-github-square(aria-hidden="true")
-							a(href='https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/' target="_blank" rel="nofollow")
-								i.fa.fa-linkedin-square(aria-hidden="true")
-					.col-xs-12.col-md-4
-						a.source-code-link(href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow")
-							|View Source on GitHub
-					.col-xs-12.col-md-4.col-md-pull-8
-						.copyright-text
-							|Copyright &copy; #{year} Zo&euml; Clarno
-					.clearfix
+					.row
+						.col-xs-12.col-md-10.col-md-offset-1
+							.row
+								.col-xs-12.col-md-4.col-md-push-8
+									.social-media-links
+										a(href='https://twitter.com/PetalDoe' target="_blank" rel="nofollow")
+											i.fa.fa-twitter-square(aria-hidden="true")
+										a(href='https://github.com/pixilz' target="_blank" rel="nofollow")
+											i.fa.fa-github-square(aria-hidden="true")
+										a(href='https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/' target="_blank" rel="nofollow")
+											i.fa.fa-linkedin-square(aria-hidden="true")
+								.col-xs-12.col-md-4
+									a.source-code-link(href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow")
+										|View Source on GitHub
+								.col-xs-12.col-md-4.col-md-pull-8
+									.copyright-text
+										|Copyright &copy; #{year} Zo&euml; Clarno
+								.clearfix
