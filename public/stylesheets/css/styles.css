@@ -452,8 +452,8 @@ body.indexBody .contact-row {
       background-color: #843534;
       color: #fff;
       text-decoration: none; }
-  body.indexBody .contact-row #contactMeSection form > div,
-  body.indexBody .contact-row #contactMeSection form > input {
+  body.indexBody .contact-row #contactMeSection form > input,
+  body.indexBody .contact-row #contactMeSection form > div {
     width: 304px; }
   body.indexBody .contact-row #contactMeSection form .g-recaptcha {
     margin: 20px auto 0; }
@@ -461,8 +461,12 @@ body.indexBody .contact-row {
       body.indexBody .contact-row #contactMeSection form .g-recaptcha {
         margin-left: 0;
         margin-right: 0; } }
-  body.indexBody .contact-row #contactMeSection form > textarea,
-  body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]) {
+  body.indexBody .contact-row #contactMeSection form .invalid-input-error {
+    padding-top: 3px;
+    color: #BD362F;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25); }
+  body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]),
+  body.indexBody .contact-row #contactMeSection form > textarea {
     display: block;
     padding: 0;
     border: none;
@@ -472,16 +476,19 @@ body.indexBody .contact-row {
     resize: none;
     height: 25px;
     margin: 20px auto 0; }
+    body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]).invalid-input,
+    body.indexBody .contact-row #contactMeSection form > textarea.invalid-input {
+      border-bottom-color: #BD362F; }
     @media (min-width: 768px) {
-      body.indexBody .contact-row #contactMeSection form > textarea,
-      body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]) {
+      body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]),
+      body.indexBody .contact-row #contactMeSection form > textarea {
         margin-left: 0;
         margin-right: 0; }
-        body.indexBody .contact-row #contactMeSection form > textarea:first-child,
-        body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):first-child {
+        body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):first-child,
+        body.indexBody .contact-row #contactMeSection form > textarea:first-child {
           margin-top: 40px; } }
-    body.indexBody .contact-row #contactMeSection form > textarea:focus,
-    body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus {
+    body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]):focus,
+    body.indexBody .contact-row #contactMeSection form > textarea:focus {
       outline: none;
       border-bottom: solid 2px #fff; }
   body.indexBody .contact-row #contactMeSection form > textarea {
@@ -511,7 +518,7 @@ body.indexBody .portfolio-row .project-container .project-asset-container {
   body.indexBody .portfolio-row .project-container .project-asset-container img {
     width: 100%; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-desktop-asset {
-    box-shadow: -1px 0 3px 0px rgba(0, 0, 0, 0.12), 1px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: -1px 0 3px 0 rgba(0, 0, 0, 0.12), 1px 1px 3px 0 rgba(0, 0, 0, 0.12);
     width: 75%; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-tablet-asset {
     box-shadow: -3px 0 6px rgba(0, 0, 0, 0.16);
@@ -520,7 +527,7 @@ body.indexBody .portfolio-row .project-container .project-asset-container {
     right: 10%;
     bottom: 0; }
   body.indexBody .portfolio-row .project-container .project-asset-container .project-mobile-asset {
-    box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19), 1px 0px 3px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: -7px 0 14px rgba(0, 0, 0, 0.19), 1px 0 3px 1px rgba(0, 0, 0, 0.1);
     width: 15%;
     position: absolute;
     right: 0;
