@@ -45,7 +45,7 @@ router.use('/', function(req, res) {
         });
     } else {
 
-        let options = {
+        var options = {
             method: 'post',
             url: 'https://www.google.com/recaptcha/api/siteverify',
             qs: {
@@ -65,16 +65,16 @@ router.use('/', function(req, res) {
             }
 
             if (body.success) {
-                let emailMsg = 'Name: ${name}\nEmail: ${email}\n\nMessage: ${msg}';
+                var emailMsg = 'Name: ${name}\nEmail: ${email}\n\nMessage: ${msg}';
 
-                let transporter = nodemailer.createTransport( {
+                var transporter = nodemailer.createTransport( {
                     service:  'Mailgun',
                     auth: {
                      user: process.env.MAILGUN_USER,
                      pass: process.env.MAILGUN_PASS
                     }
                 });
-                let mailOpts = {
+                var mailOpts = {
                     from: process.env.MAILGUN_USER,
                     to: 'zoeclarno@gmail.com',
                     subject: 'Portfolio Contact Form',
