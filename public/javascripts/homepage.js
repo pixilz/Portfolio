@@ -88,7 +88,7 @@ $(function() {
                     grecaptcha.reset() //Reset the recaptcha so they can resubmit
 
                     var errorStr = '';
-                    $.each(response.data, function(index, errorField) {
+                    $.each(response.responseJSON.data, function(index, errorField) {
                         $.each(errorField, function(fieldName, fieldError) {
                             errorStr += `${fieldError}\n`;
                         });
