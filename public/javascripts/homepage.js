@@ -77,18 +77,24 @@ $(function() {
             data = validateForm($form);
 
         if (data) {
-            console.log(data);
             $.ajax({
                 type: "POST",
                 url: '/Contact',
                 data: data,
                 success: function(response) {
-                    console.log('success');
-                    console.log(response);
+                    swal("Success!", "Your message has been sent.", "success")
                 },
                 error: function(response) {
-                    console.log('failure');
-                    console.log(response);
+                    grecaptcha.reset() //Reset the recaptcha so they can resubmit
+
+                    var errorStr = '';
+                    $.each(response.data, function(index, errorField) {
+                        $.each(errorField, function(fieldName, fieldError) {
+                            errorStr += `${fieldError}\n`;
+                        });
+                    });
+
+                    swal("Error...", errorStr, "error");
                 }
             });
             //Call API to submit form

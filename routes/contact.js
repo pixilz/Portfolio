@@ -30,8 +30,13 @@ router.use('/', function(req, res) {
     if (!captcha) errors.push({'g-recaptcha-response': 'Please validate the captcha'});
 
 
+    var sendResponse = function(statusCode, success, data) {
+        res.status(statusCode).json({success: success, data: data});
+    };
+
     if (errors.length) {
-        res.status(200).json({success: false, data: errors});
+        //There were errors in the form
+        sendResponse(418, false, errors);
     } else {
         var options = {
             method: 'post',
@@ -46,9 +51,9 @@ router.use('/', function(req, res) {
 
         request(options, function(err, response, body) {
             if (err) {
-                console.log('error posting json: ', err);
-
-                res.status(500).json({success: false, data: [{'g-recaptcha-response': 'reCAPTCHA failed to validate.'}]});
+                //There was an unidentified communication error
+                console.log('reCAPTCHA Error:\n ', err);
+                sendResponse(418, false, [{'g-recaptcha-response': 'reCAPTCHA failed to validate.'}]);
                 return false;
             }
 
@@ -77,15 +82,18 @@ router.use('/', function(req, res) {
                 transporter.sendMail(mailOptions,
                     function(mailErr, mailRes) {
                         if(mailErr) {
-                            res.status(500).json({success: false, data: [{'email': 'Server was unable to send email.'}]});
-                            console.log(mailErr);
+                            //Mail was unable to send
+                            sendResponse(418, false, [{'email': 'Server was unable to send email.'}]);
+                            console.log('Mail Error:\n ', mailErr);
                         } else {
-                            res.status(200).json({success: true});
+                            //Everything worked correctly. (As far as responses go)
+                            sendResponse(200, true);
                         }
                     }
                 );
             } else {
-                res.status(200).json({success: false, data: [{'g-recaptcha-response': 'reCAPTCHA was invalid.'}]});
+                //reCAPTCHA passed in was plain wrong.
+                sendResponse(418, false, [{'g-recaptcha-response': 'reCAPTCHA was invalid.'}]);
             }
         });
     }
