@@ -16,35 +16,23 @@ router.use('/', function(req, res) {
         ip = req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
-        req.connection.socket.remoteAddress;
+        req.connection.socket.remoteAddress,
+        emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     //Error checking
-    if (!name) errors.push({
-        cf_name: 'A name is required'
-    });
-    if (!email) errors.push({
-        cf_email: 'An email is required'
-    });
-    else if (!email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
-        errors.push({
-            cf_email: 'Please enter a valid email'
-        });
-    }
-    if (!msg) errors.push({
-        cf_message: 'A message is required'
-    });
-    if (!captcha) errors.push({
-        'g-recaptcha-response': 'Please validate the captcha'
-    });
+    if (!name) errors.push({cf_name: 'A name is required'});
+
+    if (!email) errors.push({cf_email: 'An email is required'});
+    else if (!email.match(emailRegex)) errors.push({cf_email: 'Please enter a valid email'});
+
+    if (!msg) errors.push({cf_message: 'A message is required'});
+
+    if (!captcha) errors.push({'g-recaptcha-response': 'Please validate the captcha'});
 
 
     if (errors.length) {
-        res.status(200).json({
-            success: false,
-            data: errors
-        });
+        res.status(200).json({success: false, data: errors});
     } else {
-
         var options = {
             method: 'post',
             url: 'https://www.google.com/recaptcha/api/siteverify',
@@ -65,46 +53,42 @@ router.use('/', function(req, res) {
             }
 
             if (body.success) {
-                var emailMsg = 'Name: ${name}\nEmail: ${email}\n\nMessage: ${msg}';
+                var emailMsg = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`;
 
-                var transporter = nodemailer.createTransport( {
-                    service:  'Mailgun',
+                var transporter = nodemailer.createTransport({
+                    service: 'gmail',
                     auth: {
-                     user: process.env.MAILGUN_USER,
-                     pass: process.env.MAILGUN_PASS
+                        type: 'OAuth2',
+                        user: process.env.GMAIL_ACC,
+                        clientId: process.env.GMAIL_CLIENTID,
+                        clientSecret: process.env.GMAIL_CLIENTSECRET,
+                        refreshToken: process.env.GMAIL_RFRESHTOKEN,
+                        accessToken: process.env.GMAIL_ACCESSTOKEN
                     }
                 });
-                var mailOpts = {
-                    from: process.env.MAILGUN_USER,
-                    to: 'zoeclarno@gmail.com',
-                    subject: 'Portfolio Contact Form',
+
+                var mailOptions = {
+                    from: process.env.GMAIL_ACC,
+                    to: process.env.GMAIL_ACC,
+                    subject: `Portfolio Contact Form - ${name}`,
                     text: emailMsg
                 };
-                transporter.sendMail(mailOpts, function (err, response) {
-                    if (err) {
-                     //ret.message = "Mail error.";
-                     res.status(200).json({success: false, data: [{'email': 'Your email failed to send.'}]});
-                    } else {
-                     //ret.message = "Mail send.";
-                     res.status(200).json({success: true});
+
+                transporter.sendMail(mailOptions,
+                    function(mailErr, mailRes) {
+                        if(mailErr) {
+                            res.status(500).json({success: false, data: [{'email': 'Server was unable to send email.'}]});
+                            console.log(mailErr);
+                        } else {
+                            res.status(200).json({success: true});
+                        }
                     }
-                });
+                );
             } else {
                 res.status(200).json({success: false, data: [{'g-recaptcha-response': 'reCAPTCHA was invalid.'}]});
             }
         });
     }
-
-
-    /*if(req.query.test) {
-      // respond with JSON
-      res.status(200).json();
-      res.json(200, { data: req.query.test })
-    } else {
-      // or show an error
-      res.status(500).json({error: 'message'});
-    }*/
-
 });
 
 module.exports = router;
