@@ -67,7 +67,7 @@ router.use('/', function(req, res) {
                         user: process.env.GMAIL_ACC,
                         clientId: process.env.GMAIL_CLIENTID,
                         clientSecret: process.env.GMAIL_CLIENTSECRET,
-                        refreshToken: process.env.GMAIL_RFRESHTOKEN,
+                        refreshToken: process.env.GMAIL_REFRESHTOKEN,
                         accessToken: process.env.GMAIL_ACCESSTOKEN
                     }
                 });
