@@ -588,3 +588,27 @@ body.indexBody .resume-section-row .resume-row {
           height: 200%;
           font-family: "Open Sans", sans-serif;
           content: '-'; }
+
+.errorPageBody {
+  background-color: #000; }
+  .errorPageBody .container-fluid {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; }
+    .errorPageBody .container-fluid .error-page-content {
+      position: absolute;
+      display: table;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .errorPageBody .container-fluid .error-page-content .img-responsive {
+        margin: 0 auto; }
+      .errorPageBody .container-fluid .error-page-content .error-page-text {
+        color: #fff; }
+        .errorPageBody .container-fluid .error-page-content .error-page-text a {
+          color: #fff;
+          text-decoration: underline; }
+          .errorPageBody .container-fluid .error-page-content .error-page-text a:hover {
+            color: #4F8FF6; }
