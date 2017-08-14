@@ -6,20 +6,29 @@
 
 var app = require('../app');
 var debug = require('debug')('myPortfolio:server');
-var http = require('http');
+var http = require('https');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '442');
 app.set('port', port);
+
+
+var sslPath = '/etc/letsencrypt/live/pixilz.io/';
+
+var options = {
+    key: fs.readFileSync(sslPath + 'privkey.pem'),
+    cert: fs.readFileSync(sslPath + 'fullchain.pem')
+};
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(options, app);
 
 /**
  * Listen on provided port, on all network interfaces.
