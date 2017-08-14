@@ -11,4 +11,5 @@ block content
                 .error-page-text
                     span To return to the homepage click&nbsp;
                     a(href='/') here
-                pre.text-left= error.stack
+                if error.stack
+                    pre.text-left= error.stack
