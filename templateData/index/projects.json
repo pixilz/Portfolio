@@ -32,9 +32,9 @@
 			"MySQL"
 		],
 		"assets": {
-			"mobile": "http://placehold.it/360x640",
-			"tablet": "http://placehold.it/768x1024",
-			"desktop": "http://placehold.it/1366x768"
+			"mobile": "https://placehold.it/360x640",
+			"tablet": "https://placehold.it/768x1024",
+			"desktop": "https://placehold.it/1366x768"
 		}
 	}]
 }
