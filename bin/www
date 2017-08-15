@@ -16,13 +16,22 @@ var fs = require('fs');
 var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
+var options = {};
+var certPath = process.env.CERT_PATH;
 
-var sslPath = '/etc/letsencrypt/live/pixilz.io/';
+if(process.env.NODE_ENV == 'development') {
+  options = {
+    pfx: fs.readFileSync(certPath),
+    passphrase: process.env.CERT_PASSPHRASE
+  };
+} else {
+    options = {
+        key: fs.readFileSync(certPath + 'privkey.pem'),
+        cert: fs.readFileSync(certPath + 'fullchain.pem')
+    };
+}
 
-var options = {
-    key: fs.readFileSync(sslPath + 'privkey.pem'),
-    cert: fs.readFileSync(sslPath + 'fullchain.pem')
-};
+
 
 /**
  * Create HTTP server.
