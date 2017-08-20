@@ -276,6 +276,9 @@ body.indexBody {
 
             .project-description {
                 @include line-calc(35px);
+                ul {
+                    list-style-position: inside;
+                }
             }
         }
     }

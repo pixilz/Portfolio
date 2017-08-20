@@ -537,6 +537,8 @@ body.indexBody .portfolio-row .project-container .project-description {
   margin-top: calc(35px - 0.5em);
   margin-bottom: -0.5em;
   line-height: 1.5em; }
+  body.indexBody .portfolio-row .project-container .project-description ul {
+    list-style-position: inside; }
 
 body.indexBody .section-title span {
   display: inline-block; }
