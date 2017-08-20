@@ -19,5 +19,22 @@
 			"tablet": "/images/projects/StateFoodSafety/768x1024.png",
 			"mobile": "/images/projects/StateFoodSafety/360x640.png"
 		}
+	}, {
+		"title": "AboveTraining Dashboard",
+		"description": "The main powerhouse of AboveTraining is it's customized dashboard that is the driving force for all user and course management, as well as course and certification delivery. This dashboard is used on nearly all of AboveTraining's websites, including StateFoodSafety.com. When this tool was first implemented my main task was overall component theming. Since then I have been lucky enough to build a few applets. One of these applets is used to manage the custom portals for our corporate clients without any intervention, passed the initial setup, of our web development team. The entirety of the dashboard (including applets) are written in Ext JS, which is a javascript web application framework.",
+		"noView_": "To view this you must buy a product from StateFoodSafety.com",
+		"skills": [
+			"Sass",
+			"JavaScript",
+			"Ext Js",
+			"Ajax",
+			"PHP",
+			"MySQL"
+		],
+		"assets": {
+			"mobile": "https://placehold.it/360x640",
+			"tablet": "https://placehold.it/768x1024",
+			"desktop": "https://placehold.it/1366x768"
+		}
 	}]
 }
