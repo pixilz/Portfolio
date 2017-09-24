@@ -42,6 +42,7 @@ body.indexBody {
     }
 
     #section-profileImage {
+        background-color: #606060;
         overflow  : hidden;
         position  : relative;
         height    : 600px;
@@ -161,6 +162,7 @@ body.indexBody {
                 }
 
                 .g-recaptcha {
+                    overflow: hidden;
                     margin: 20px auto 0;
                     @media(min-width: $screen-sm) {
                         margin-left : 0;

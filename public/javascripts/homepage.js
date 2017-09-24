@@ -26,19 +26,22 @@ function heroSizing() {
     var /*$headerHeight = $('#header').height(),*/
         $aboutHeight = $('#section-about-col').height(),
         $windowHeight = $(window).height(),
+        $windowWidth = $(window).width(),
         $profileImage = $('#section-profileImage'),
         $heroImage = $(".img-responsive.hero"),
         newHeight = $windowHeight - ( /*$headerHeight + */ $aboutHeight);
 
     $profileImage.height(newHeight);
 
-    $heroImage.removeProp("style");
+    $heroImage.removeAttr("style");
 
     //Used to override css if the height of the image isn't enough.
     if ($heroImage.outerHeight() < newHeight) {
         $heroImage.css("max-width", "none");
         $heroImage.css("min-width", 0);
         $heroImage.css("height", newHeight);
+    } else if($heroImage.outerWidth() < $windowWidth) {
+        $heroImage.css('width', Math.min($windowWidth, 1920));
     }
 }
 

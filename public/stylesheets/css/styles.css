@@ -343,6 +343,7 @@ body.indexBody #logo-section {
   width: 100%; }
 
 body.indexBody #section-profileImage {
+  background-color: #606060;
   overflow: hidden;
   position: relative;
   height: 600px;
@@ -456,6 +457,7 @@ body.indexBody .contact-row {
   body.indexBody .contact-row #contactMeSection form > div {
     width: 304px; }
   body.indexBody .contact-row #contactMeSection form .g-recaptcha {
+    overflow: hidden;
     margin: 20px auto 0; }
     @media (min-width: 768px) {
       body.indexBody .contact-row #contactMeSection form .g-recaptcha {
