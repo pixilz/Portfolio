@@ -419,13 +419,22 @@ body.indexBody .skills-row .skills-item-container.skill-check {
       body.indexBody .skills-row .skills-item-container.skill-check .skill {
         margin-left: 20px;
         padding-left: 20px; } }
+    body.indexBody .skills-row .skills-item-container.skill-check .skill .tag-text {
+      display: inline-block; }
+      @media (min-width: 768px) {
+        body.indexBody .skills-row .skills-item-container.skill-check .skill .tag-text {
+          display: block; } }
     body.indexBody .skills-row .skills-item-container.skill-check .skill:before {
       font-family: "Material Icons";
       content: "\e876";
-      position: absolute;
-      margin-left: -20px; }
+      vertical-align: middle;
+      padding-right: 5px;
+      margin-left: -15px; }
       @media (min-width: 768px) {
         body.indexBody .skills-row .skills-item-container.skill-check .skill:before {
+          vertical-align: baseline;
+          position: absolute;
+          padding: 0;
           margin: 0;
           top: 50%;
           left: 0;
@@ -466,7 +475,12 @@ body.indexBody .contact-row {
   body.indexBody .contact-row #contactMeSection form .invalid-input-error {
     padding-top: 3px;
     color: #BD362F;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25); }
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+    text-align: left;
+    margin: 0 auto; }
+    @media (min-width: 768px) {
+      body.indexBody .contact-row #contactMeSection form .invalid-input-error {
+        margin: 0; } }
   body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]),
   body.indexBody .contact-row #contactMeSection form > textarea {
     display: block;
