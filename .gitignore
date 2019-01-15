@@ -34,3 +34,7 @@ node_modules
 
 # Debug log from npm
 npm-debug.log
+
+# IDE Files
+.vscode
+.idea
