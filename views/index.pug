@@ -4,67 +4,50 @@ block preBody
     -(bodyClasses.push("indexBody"))
 
 block append footerscripts
-    script(type='text/javascript',src='/javascripts/homepage.js')
-    script(src="https://www.google.com/recaptcha/api.js")
+    script(src='https://www.google.com/recaptcha/api.js')
+    script(src='https://cdn.emailjs.com/sdk/2.3.2/email.min.js')
+    script(src='./public/javascripts/homepage.js')
 
 block header
     include includes/loader.pug
-    #header.navbar.navbar-inverse.navbar-fixed-top.center
-        .navbar-inner
-            ul.nav.navbar-nav
-                li
-                    a(href='#section-intro')
-                        i.material-icons &#xE7FD;
-                li
-                    a(href='#section-examples')
-                        i.material-icons &#xE333;
-                li
-                    a(href='#section-resume')
-                        i.material-icons &#xE0E0;
-                li
-                    a(href='#section-skills')
-                        i.material-icons &#xE6C4;
-                li
-                    a(href='#section-contactme')
-                        i.material-icons &#xE0D8;
 
 block content
     #content.container-fluid
         .row.main-row
-            .col-xs-12
+            .col
                 #section-intro
                     #logo-section
-                        img.img-responsive.image-spacing(src='/images/logo.png')
+                        img.img-responsive.image-spacing(src='./public/images/logo.png')
                         h1.h1-heading Zo&euml; Clarno
-                        h2.h2-heading Web + Software Developer
+                        h2.h2-heading Senior Web Developer
                     #section-profileImage
                         div
-                            img.img-responsive.hero(src="/images/hero.jpg")
+                            img.img-responsive.hero(src='./public/images/hero.jpg')
         .row.main-row.dark.container-spacing
-            #section-about-col.col-xs-12
+            #section-about-col.col
                 .row
                     #section-about.container-spacing
-                        .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                             .section-title.h3-heading.section
                                 span About Me
                             hr.main-row-title-line.separator-line
-                        .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                             .section-text.body-text.section
                                 | When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.
                                 br
                                 br
                                 | I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.
 
-                        .col-xs-12
+                        .col-12
                             br
                             br
-                        .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
-                            a.aboutSectionBtn.site-button(href='/Resume-ZoeClarno.pdf') View Resume
+                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
+                            a.aboutSectionBtn.site-button(href='./public/Resume-ZoeClarno.pdf') View Resume
         .row.main-row.portfolio-row.container-spacing
-            .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                 .main-row-title.h3-heading Portfolio
                 hr.main-row-title-line.separator-line
-                each project in pObj.projects
+                each project in PROJECTS.projects
                     .project-container
                         .project-title.body-title= project.title
                         hr.main-row-title-line
@@ -88,31 +71,31 @@ block content
                         else if project.noView
                             .project-no-view= project.noView
         .row.main-row.why-me-row.container-spacing
-            .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                 .main-row-title.section-title.h3-heading.section Why Me?
                 hr.main-row-title-line.separator-line
                 .why-me-box-title.section-title.body-title.section
                 .row
-                    each why, key in whyMe.list
-                        .col-xs-12.col-md-6
+                    each why, key in WHYME.list
+                        .col-12.col-md-6
                             .why-me-box
                                 .why-me-box-title.section-title.body-title.section.no-spacing= why.title
                                 .why-me-box-description.section-title.body-text.section= why.description
-                        if whyMe.list[key+1] && (key + 1) % 2 == 0
-                            .col-xs-12
+                        if WHYME.list[key+1] && (key + 1) % 2 === 0
+                            .col-12
                                 .row
-                                    .col-xs-12.col-md-6
+                                    .col-12.col-md-6
                                         hr.why-me-line-row.separator-line
-                                    .col-xs-12.col-md-6.hidden-xs.hidden-sm
+                                    .col-12.col-md-6.d-none.d-sm-none.d-md-block
                                         hr.why-me-line-row.separator-line
-                        else if whyMe.list[key+1]
-                            .col-xs-12.hidden-md.hidden-lg
+                        else if WHYME.list[key+1]
+                            .col-12.d-md-none
                                 hr.why-me-line-row.separator-line
         .row.main-row.skills-row.container-spacing
-            .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                 .main-row-title.h3-heading Skills
                 hr.main-row-title-line.separator-line
-                each skillset in skills
+                each skillset in SKILLS.skills
                     div(class=skillset.tags ? "skills-item-container skill-tags" : "skills-item-container skill-check")
                         .skill-title.body-title #{skillset.name}
                         .skill-items
@@ -120,47 +103,39 @@ block content
                                 .skill
                                     .tag-text #{skill}
         .row.main-row.contact-row.container-spacing
-            #contactMeSection.col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+            #contactMeSection.col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                 .row
-                    .col-xs-12.col-sm-6
-                        form.has-validation(action='javascript:void()')
+                    .col-12.col-sm-6
+                        form.has-validation(action='javascript:void(0);')
                             input(type='text', name='cf_name', placeholder='Name', required)
                             input(type='email', name='cf_email', placeholder="Email Address", required)
                             textarea(name='cf_message', placeholder="Message", required)
-                            .g-recaptcha(data-theme='dark', data-sitekey='6LefjRMUAAAAAEQaJj_IX_xqhgmBcEwioGgIhRXM')
-                            .submitBtn Submit
-                    .col-xs-12.col-sm-6
+                            .g-recaptcha(data-sitekey='6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb')
+                            button.submit-button.reset-button Submit
+                    .col-12.col-sm-6
                         .references-container
                             .references-title.body-title.section References
                             hr.main-row-title-line.separator-line
-                            each ref in references
+                            each ref in REFERENCES.inuse
                                 .reference
                                     p.reference-text.body-text.section!= ref.text
                                     a.reference-author.body-text.section(href=ref.authorLink rel='nofollow')!= ref.author
-                            //-.reference
-                                p.reference-text.body-text.section ipsum aliqua velit cillum malis quem labore amet eram export tempor legam illum fore culpa export multos veniam nisi fore aliqua legam esse summis export quem fore quorum duis illum
-                                .reference-author.body-text.section A Latin Guy
-                            //-.reference
-                                p.reference-text.body-text.section multos noster quae cillum tempor quis summis elit nisi enim dolor illum legam amet dolor cillum duis duis labore ipsum sint dolor fore legam sint cillum sint aliqua nisi nulla
-                                .reference-author.body-text.section Dog Fist Blotzcrunk
         .row.footer-row
             .footer-container
                 .footer-container-row
                     .row
-                        .col-xs-12.col-md-10.col-md-offset-1.col-lg-8.col-lg-offset-2
+                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
                             .row
-                                .col-xs-12.col-md-4.col-md-push-8
+                                .col-12.col-md-4.col-md-push-8
                                     .social-media-links
-                                        a(href='https://twitter.com/PetalDoe' target="_blank" rel="nofollow")
-                                            i.fa.fa-twitter-square(aria-hidden="true")
                                         a(href='https://github.com/pixilz' target="_blank" rel="nofollow")
                                             i.fa.fa-github-square(aria-hidden="true")
                                         a(href='https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/' target="_blank" rel="nofollow")
                                             i.fa.fa-linkedin-square(aria-hidden="true")
-                                .col-xs-12.col-md-4
+                                .col-12.col-md-4
                                     a.source-code-link(href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow")
                                         |View Source on GitHub
-                                .col-xs-12.col-md-4.col-md-pull-8
+                                .col-12.col-md-4.col-md-pull-8
                                     .copyright-text
                                         |Copyright &copy; #{year} Zo&euml; Clarno
                                 .clearfix
