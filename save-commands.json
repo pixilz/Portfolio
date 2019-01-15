@@ -1,5 +1,0 @@
-{
-	"commands": [
-		"**/stylesheets/**/*.scss : gulp scss"
-	]
-}
