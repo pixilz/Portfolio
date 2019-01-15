@@ -10,10 +10,6 @@
 }
 
 body.indexBody {
-    * {
-        z-index: 20; //This is here in order to make everything float above the fixed hero image.
-    }
-
     .img-responsive {
         margin: 0 auto;
     }
@@ -70,6 +66,10 @@ body.indexBody {
         text-align      : center;
         @media(min-width: $screen-sm) {
             text-align: left;
+        }
+
+        &:first-child {
+            z-index: -1; //This is here in order to make everything float above the fixed hero image.
         }
 
         .main-row-title-line {
@@ -163,7 +163,7 @@ body.indexBody {
 
         #contactMeSection {
             form {
-                .submitBtn {
+                .submit-button {
                     @include site-button($width: 304px);
                 }
 
@@ -192,8 +192,9 @@ body.indexBody {
                     }
                 }
 
-                 > input:not([type="submit"]),
+                > input:not([type="submit"]),
                 > textarea {
+                    color: #fff;
                     display         : block;
                     padding         : 0;
                     border          : none;

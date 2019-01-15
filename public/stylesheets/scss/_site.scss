@@ -1,21 +1,21 @@
 * {
-	margin : 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body,
 html {
-	min-width: 320px;
-	width    : 100%;
-	height   : 100%;
-	position : relative;
-	color    : $font-color;
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: $font-color;
 }
 
 body {
-	overflow   : hidden;
-	font-size  : $font-size;
-	font-family: $font-family;
+  overflow: hidden;
+  font-size: $font-size;
+  font-family: $font-family;
 }
 
 $placeholderColor: #fff;
@@ -23,17 +23,20 @@ $placeholderOpacity: 0.65;
 
 ::-webkit-input-placeholder { /* Chrome */
   color: $placeholderColor;
-	opacity: $placeholderOpacity;
+  opacity: $placeholderOpacity;
 }
+
 :-ms-input-placeholder { /* IE 10+ */
-	color: $placeholderColor;
-	opacity: $placeholderOpacity;
+  color: $placeholderColor;
+  opacity: $placeholderOpacity;
 }
+
 ::-moz-placeholder { /* Firefox 19+ */
-	color: $placeholderColor;
-	opacity: $placeholderOpacity;
+  color: $placeholderColor;
+  opacity: $placeholderOpacity;
 }
+
 :-moz-placeholder { /* Firefox 4 - 18 */
-	color: $placeholderColor;
-	opacity: $placeholderOpacity;
+  color: $placeholderColor;
+  opacity: $placeholderOpacity;
 }

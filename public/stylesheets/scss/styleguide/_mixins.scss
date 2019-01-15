@@ -50,17 +50,29 @@
 }
 @mixin site-button($width: 150px) {
 	display         : inline-block;
+	border: none;
+	padding: 0;
+	overflow: visible;
 	width           : $width;
 	height          : 30px;
 	line-height     : 30px;
-	margin-right    : 50px;
-	margin-top: 20px;
+	margin: 20px 50px 0 0;
 	cursor          : pointer;
 	background-color: $button-color;
 	color           : $section-font-color;
 	text-align      : center;
 	border-radius   : 3px;
 	text-decoration: none;
+
+	/* Corrects inability to style clickable `input` types in iOS */
+	-webkit-appearance: none;
+
+	/* Corrects font smoothing for webkit */
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+
+	/* inherit font & color from ancestor */
+	font: inherit;
 
 	&:last-child {
 		margin-right: 0;
