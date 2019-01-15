@@ -14,7 +14,7 @@ toastr.options = {
     "hideEasing": "linear",
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
-}
+};
 
 /**
  * Hero sizing sets the height of the hero image based upon how much room it is allowed
@@ -57,6 +57,8 @@ $(window).on('load', function() {
 });
 
 $(function() {
+    emailjs.init('user_9oPetXteepojqp5jJWT33');
+
     $('#contactMeSection textarea').each(function() {
         this.setAttribute('style', 'height:' + (this.scrollHeight * 2 + 5) + 'px;overflow-y:hidden;');
     }).on('input', function() {
@@ -75,32 +77,22 @@ $(function() {
         $document.scrollTop(initialScrollTop);
     });
 
-    $('.submitBtn').on('click', function() {
+    $('.submit-button').on('click', function() {
         var $form = $(this).closest('form'),
             data = validateForm($form);
 
         if (data) {
-            $.ajax({
-                type: "POST",
-                url: '/Contact',
-                data: data,
-                success: function(response) {
-                    swal("Success!", "Your message has been sent.", "success")
-                },
-                error: function(response) {
-                    grecaptcha.reset() //Reset the recaptcha so they can resubmit
+            emailjs
+                .send('gmail', 'template_nTztvt19')
+                .then(
+                    function() {
+                       Swal("Success!", "Your message has been sent.", "success");
+                    }, function(error) {
+                        Swal("Error...", 'An error occurred while sending an email.', "error");
 
-                    var errorStr = '';
-                    $.each(response.responseJSON.data, function(index, errorField) {
-                        $.each(errorField, function(fieldName, fieldError) {
-                            errorStr += `${fieldError}\n`;
-                        });
-                    });
-
-                    swal("Error...", errorStr, "error");
-                }
-            });
-            //Call API to submit form
+                        console.log(error);
+                    }
+                );
         }
     });
 
@@ -123,13 +115,13 @@ function validateForm($form) {
             //Throw error on input for being empty and required.
             errors = true;
             markInputInvalid($input, "This field is required");
-        } else if ($input.val().trim() && $input.attr('type') == 'email') {
+        } else if ($input.val().trim() && $input.attr('type') === 'email') {
             if (!$input.val().match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
                 //Throw error on input for being an invalid email
                 errors = true;
                 markInputInvalid($input, "Please enter a valid email address.");
             }
-        } else if ($input.attr('name') == 'g-recaptcha-response' && !$input.val()) {
+        } else if ($input.attr('name') === 'g-recaptcha-response' && !$input.val()) {
             //Recaptcha is required notif window.
             recaptcha = false;
         }
@@ -156,9 +148,6 @@ function markInputInvalid($input, error) {
         "text": error,
         "class": "invalid-input-error"
     }));
-
-    //Create notif window
-    //Please fill out the fields in red.
 }
 
 function removeInvalidMark($input) {
