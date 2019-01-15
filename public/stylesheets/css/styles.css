@@ -37,17 +37,26 @@
 
 .site-button {
   display: inline-block;
+  border: none;
+  padding: 0;
+  overflow: visible;
   width: 150px;
   height: 30px;
   line-height: 30px;
-  margin-right: 50px;
-  margin-top: 20px;
+  margin: 20px 50px 0 0;
   cursor: pointer;
   background-color: #a94442;
   color: #fff;
   text-align: center;
   border-radius: 3px;
-  text-decoration: none; }
+  text-decoration: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* inherit font & color from ancestor */
+  font: inherit; }
   .site-button:last-child {
     margin-right: 0; }
   .site-button:hover {
@@ -316,9 +325,6 @@ body.indexBody .resume-section-row .resume-row .resume-list > ul > li .arrow::be
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
-body.indexBody * {
-  z-index: 20; }
-
 body.indexBody .img-responsive {
   margin: 0 auto; }
 
@@ -367,6 +373,8 @@ body.indexBody .main-row {
   @media (min-width: 768px) {
     body.indexBody .main-row {
       text-align: left; } }
+  body.indexBody .main-row:first-child {
+    z-index: -1; }
   body.indexBody .main-row .main-row-title-line {
     width: 50px;
     margin: 15px auto 0; }
@@ -443,22 +451,31 @@ body.indexBody .skills-row .skills-item-container.skill-check {
 body.indexBody .contact-row {
   background-color: #263238;
   color: #fff; }
-  body.indexBody .contact-row #contactMeSection form .submitBtn {
+  body.indexBody .contact-row #contactMeSection form .submit-button {
     display: inline-block;
+    border: none;
+    padding: 0;
+    overflow: visible;
     width: 304px;
     height: 30px;
     line-height: 30px;
-    margin-right: 50px;
-    margin-top: 20px;
+    margin: 20px 50px 0 0;
     cursor: pointer;
     background-color: #a94442;
     color: #fff;
     text-align: center;
     border-radius: 3px;
-    text-decoration: none; }
-    body.indexBody .contact-row #contactMeSection form .submitBtn:last-child {
+    text-decoration: none;
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    /* inherit font & color from ancestor */
+    font: inherit; }
+    body.indexBody .contact-row #contactMeSection form .submit-button:last-child {
       margin-right: 0; }
-    body.indexBody .contact-row #contactMeSection form .submitBtn:hover {
+    body.indexBody .contact-row #contactMeSection form .submit-button:hover {
       background-color: #843534;
       color: #fff;
       text-decoration: none; }
@@ -483,6 +500,7 @@ body.indexBody .contact-row {
         margin: 0; } }
   body.indexBody .contact-row #contactMeSection form > input:not([type="submit"]),
   body.indexBody .contact-row #contactMeSection form > textarea {
+    color: #fff;
     display: block;
     padding: 0;
     border: none;
