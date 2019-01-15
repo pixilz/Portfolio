@@ -83,7 +83,7 @@ $(function() {
 
         if (data) {
             emailjs
-                .send('gmail', 'template_nTztvt19')
+                .send('gmail', 'template_nTztvt19', data)
                 .then(
                     function() {
                        Swal("Success!", "Your message has been sent.", "success");
