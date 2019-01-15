@@ -1,18 +1,22 @@
 {
 	"skills": [{
-		"name": "Languages",
+		"name": "Languages & Libraries",
 		"tags": true,
 		"items": [
+			"Css",
 			"Sass",
 			"JavaScript",
-			"Node.Js",
+			"Jest",
+			"Node.js",
+			"Vue",
 			"jQuery",
 			"Ext Js",
+			"HTML",
 			"Bootstrap",
 			"MySQL",
-			"Smarty",
 			"Pug/Jade",
-			"PHP"
+			"PHP",
+			"Smarty"
 		]
 	}, {
 		"name": "Tools",
@@ -21,7 +25,6 @@
 			"Git",
 			"Bash",
 			"Gulp",
-			"Compass",
 			"Adobe Photoshop",
 			"Adobe Illustrator"
 		]
@@ -30,10 +33,10 @@
 		"tags": false,
 		"items": [
 			"Agile Development (SCRUM)",
-			"Mobile first development",
-			"Responsive development",
-			"Test driven development",
-			"ECMAscript 6",
+			"Unit Testing",
+			"Mobile First Development",
+			"Project Management",
+			"ES6",
 			"SEO"
 		]
 	}]

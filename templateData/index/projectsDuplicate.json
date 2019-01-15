@@ -15,9 +15,9 @@
 			"Composer"
 		],
 		"assets": {
-			"desktop": "/images/projects/StateFoodSafety/1366x768.png",
-			"tablet": "/images/projects/StateFoodSafety/768x1024.png",
-			"mobile": "/images/projects/StateFoodSafety/360x640.png"
+			"desktop": "./public/images/projects/StateFoodSafety/1366x768.png",
+			"tablet": "./public/images/projects/StateFoodSafety/768x1024.png",
+			"mobile": "./public/images/projects/StateFoodSafety/360x640.png"
 		}
 	}, {
 		"title": "AboveTraining Dashboard",
