@@ -1,0 +1,59 @@
+$screen-xs: 600px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+
+$error-color: #BD362F;
+$light-font-color: #fff;
+$dark-font-color: #0A090C;
+$link-font-color: $light-font-color;
+$link-font-color-hover: #4F8FF6;
+
+$hero-font-color: $light-font-color;
+$font-color: $dark-font-color;
+
+$separator-color: #a94442;
+$tag-border-color: #000;
+
+$input-border-color: #7d7d7d;
+$input-border-color-focus: #fff;
+
+$section-background-color: $light-font-color;
+$section-font-color: $dark-font-color;
+$alt-section-background-color: #263238;
+$alt-section-font-color: $light-font-color;
+
+$section-bottom-spacing: 3rem;
+$section-constraint: 30px;
+$section-constraint-md: 16vw;
+$section-constraint-lg: 34vw;
+
+$button-background-color: #a94442;
+$button-background-color-hover: darken($button-background-color, 10%);
+$button-font-color: $light-font-color;
+
+$font-family: 'Open Sans', sans-serif;
+$h1-font-family: 'Limelight', cursive;
+
+$root-line-height: 1.5;
+$h1-line-height: 1.15;
+$h2-line-height: 1.15;
+
+$root-font-size: 14px;
+$h1-font-size: 60px;
+$h1-font-size-sm: 120px;
+$h2-font-size: 25px;
+$h2-font-size-sm: 37px;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.4rem;
+
+$h1-font-weight: normal;
+$h2-font-weight: normal;
+$h3-font-weight: 300;
+$h4-font-weight: 300;
+
+$placeholderColor: #fff;
+$placeholderOpacity: 0.65;
+
+$footer-background-color: #11171a;
+$footer-font-color: #fff;

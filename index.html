@@ -13,288 +13,237 @@
     <link rel="shortcut icon" href="./public/images/favicon/favicon.ico">
     <meta name="msapplication-config" content="./public/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./public/stylesheets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./public/stylesheets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
-  <body class="indexBody" data-spy="scroll" data-target="#header">
-    <div id="loader-container">
-      <div class="loader"><span>{</span><span>}</span></div>
-    </div>
-    <div class="container-fluid" id="content">
-      <div class="row main-row">
-        <div class="col">
-          <div id="section-intro">
-            <div id="logo-section"><img class="img-responsive image-spacing" src="./public/images/logo.png">
-              <h1 class="h1-heading">Zo&euml; Clarno</h1>
-              <h2 class="h2-heading">Senior Web Developer</h2>
-            </div>
-            <div id="section-profileImage">
-              <div><img class="img-responsive hero" src="./public/images/hero.jpg"></div>
-            </div>
+  <body class="index-body">
+    <main role="main">
+      <section class="intro-section alt">
+        <section class="hero-section">
+          <div class="logo-container"><img class="logo" src="./public/images/logo.png">
+            <h1>Zo&euml; Clarno</h1>
+            <h2>Senior Web Developer</h2>
           </div>
+          <div class="hero-container"><img class="hero-image" src="./public/images/hero.jpg"></div>
+        </section>
+        <article class="about-me">
+          <h3>About Me</h3>
+          <hr class="separator-line">
+          <p>When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.</p>
+          <p>I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.</p><a class="site-button" href="./public/Resume-ZoeClarno.pdf">View Resume</a>
+        </article>
+      </section>
+      <section class="portfolio-section">
+        <h3>Portfolio</h3>
+        <hr class="separator-line">
+        <article class="project-container">
+          <h4>StateFoodSafety.com</h4>
+          <div class="project-asset-container">
+            <div class="project-desktop-asset"><img src="./public/images/projects/StateFoodSafety/1366x768.png"></div>
+            <div class="project-tablet-asset"><img src="./public/images/projects/StateFoodSafety/768x1024.png"></div>
+            <div class="project-mobile-asset"><img src="./public/images/projects/StateFoodSafety/360x640.png"></div>
+          </div>
+          <summary><p>The primary website for AboveTraining. During my time with AboveTraining I have been able to gain experience and knowledge for general web development. The purpose is to provide E-Learning for a variety of certifications and training in the food industry. I have been able to pitch and implement tools and features that have been beneficial to the efficiency, flow, and overall user experience on StateFoodSafety.com.</p>These include:<ul><li>Easier product management.</li><li>Updating all pages to better use templates for faster development and maintenance.</li><li>Minor integration testing relating to database and client data.</li><li>Security auditing for common web exploits. (XSS, passwords, information leak, etc…)</li><li>Small libraries to handle page elements. (modal windows, dynamic page flows, etc…)</li><li>Updating all pages to be responsive.</li></ul><p>I have expanded my knowledge to include technologies and languages that aren't being used at AboveTraining to adapt to new ideas and solutions.</p></summary>
+          <div class="project-tags">
+            <div class="tag">
+              <div class="tag-text">Smarty</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Bootstrap</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Sass</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">JavaScript</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">ES6</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">jQuery</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">ExtJS</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Vue</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Jest</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Puppeteer</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Backstop</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Ajax</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">PHP</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">MySQL</div>
+            </div>
+            <div class="tag">
+              <div class="tag-text">Composer</div>
+            </div>
+          </div><a class="site-button" href="https://www.statefoodsafety.com" target="_blank" rel="nofollow">View</a>
+        </article>
+      </section>
+      <section class="why-me-section alt">
+        <h3>Why Me?</h3>
+        <hr class="separator-line">
+        <div class="why-me-container">
+          <article class="why-me">
+            <h4>Problem Solver</h4>
+            <p>One of my favorite past times is discovering and solving puzzles. A big reason I love coding is because of how similar it is to a variety of logic puzzles. I've found that the harder a coding challenge the more excited I get, whether that be learning new languages, frameworks, other tools, or just using the knowledge I already have to solve a problem that I've never encountered. However, coding challenges aren't the only things I enjoy looking at from a new perspective; the way we approach problems and start new everyday projects can always be improved to become more graceful, understandable, and efficient.</p>
+          </article>
+          <article class="why-me">
+            <h4>Efficient</h4>
+            <p>I've worked with a wide variety of development subjects. These range from: gaming, mobile apps, full stack web development, and secure development. Learning all of these different ideologies has helped me constantly refine and develop better ways to handle any situation I come up against. Looking at general standards like the Google and W3Schools JavaScript standards provide a way to easily learn and code with best coding guidelines in mind. There are many ways to solve problems, but some are more efficient and easier to maintain and read. When writing software, I strive to have clear code and elegant solutions.</p>
+          </article>
+          <div class="why-me-separator"></div>
+          <article class="why-me">
+            <h4>Passionate</h4>
+            <p>I was raised on logic puzzles and games, early in my career the skills that had grown as I grew, translated perfectly into the role of a developer. Since my first large programming projects when I created simple little video games, I have had an unquenchable thirst to learn and develop in new and exciting ways. A lot of my free time is spent learning about new technologies in an effort to constantly expand my knowledge and potential development opportunities.  I love what I do, and plan to continue for a long time.</p>
+          </article>
+          <article class="why-me">
+            <h4>Adaptable</h4>
+            <p>I take the time to ask questions in order to inform my decisions and gain valuable feedback from others. When there are suggestions or new information I strive to be flexible. Outside of work I actively engage in projects to constantly further my skills. When given suggested improvements I can take the idea and run with it. I pay attention to those around me, how they work and the kind of work they produce, in order to inform myself on what I need to work on and how I can improve.</p>
+          </article>
         </div>
-      </div>
-      <div class="row main-row dark container-spacing">
-        <div class="col" id="section-about-col">
-          <div class="row">
-            <div class="container-spacing" id="section-about">
-              <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                <div class="section-title h3-heading section"><span>About Me</span></div>
-                <hr class="main-row-title-line separator-line">
-              </div>
-              <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                <div class="section-text body-text section">When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.<br><br>I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.</div>
-              </div>
-              <div class="col-12"><br><br></div>
-              <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2"><a class="aboutSectionBtn site-button" href="./public/Resume-ZoeClarno.pdf">View Resume</a></div>
+      </section>
+      <section class="skills-section">
+        <h3>Skills</h3>
+        <hr class="separator-line">
+        <article class="skills-item-container skill-tags">
+          <h4>Languages &amp; Libraries</h4>
+          <div class="skill-items">
+            <div class="skill">
+              <div class="skill-text">Css</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Sass</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">JavaScript</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Jest</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Puppeteer</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Backstop</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Node.js</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Vue</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">jQuery</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">ExtJS</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">HTML</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Bootstrap</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">MySQL</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Pug/Jade</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">PHP</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Smarty</div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row main-row portfolio-row container-spacing">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <div class="main-row-title h3-heading">Portfolio</div>
-          <hr class="main-row-title-line separator-line">
-          <div class="project-container">
-            <div class="project-title body-title">StateFoodSafety.com</div>
-            <hr class="main-row-title-line">
-            <div class="project-asset-container">
-              <div class="project-desktop-asset"><img src="./public/images/projects/StateFoodSafety/1366x768.png"></div>
-              <div class="project-tablet-asset"><img src="./public/images/projects/StateFoodSafety/768x1024.png"></div>
-              <div class="project-mobile-asset"><img src="./public/images/projects/StateFoodSafety/360x640.png"></div>
+        </article>
+        <article class="skills-item-container skill-check">
+          <h4>Tools</h4>
+          <div class="skill-items">
+            <div class="skill">
+              <div class="skill-text">Git</div>
             </div>
-            <div class="project-description body-text"><p>The primary website for AboveTraining. During my time with AboveTraining I have been able to gain experience and knowledge for general web development. The purpose is to provide E-Learning for a variety of certifications and training in the food industry. I have been able to pitch and implement tools and features that have been beneficial to the efficiency, flow, and overall user experience on StateFoodSafety.com.</p>These include:<ul><li>Easier product management.</li><li>Updating all pages to better use templates for faster development and maintenance.</li><li>Minor integration testing relating to database and client data.</li><li>Security auditing for common web exploits. (XSS, passwords, information leak, etc…)</li><li>Small libraries to handle page elements. (modal windows, dynamic page flows, etc…)</li><li>Updating all pages to be responsive.</li></ul><p>I have expanded my knowledge to include technologies and languages that aren't being used at AboveTraining to adapt to new ideas and solutions.</p></div>
-            <div class="project-tags">
-              <div class="item-tag">
-                <div class="tag-text">Smarty</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">Bootstrap</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">Sass</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">JavaScript</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">jQuery</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">Ajax</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">PHP</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">MySQL</div>
-              </div>
-              <div class="item-tag">
-                <div class="tag-text">Composer</div>
-              </div>
-            </div><a class="project-view-btn site-button" href="https://www.statefoodsafety.com" target="_blank" rel="nofollow">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="row main-row why-me-row container-spacing">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <div class="main-row-title section-title h3-heading section">Why Me?</div>
-          <hr class="main-row-title-line separator-line">
-          <div class="why-me-box-title section-title body-title section"></div>
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="why-me-box">
-                <div class="why-me-box-title section-title body-title section no-spacing">Problem Solver</div>
-                <div class="why-me-box-description section-title body-text section">One of my favorite past times is discovering and solving puzzles. A big reason I love coding is because of how similar it is to a variety of logic puzzles. I've found that the harder a coding challenge the more excited I get, whether that be learning new languages, frameworks, other tools, or just using the knowledge I already have to solve a problem that I've never encountered. However, coding challenges aren't the only things I enjoy looking at from a new perspective; the way we approach problems and start new everyday projects can always be improved to become more graceful, understandable, and efficient.</div>
-              </div>
+            <div class="skill">
+              <div class="skill-text">Bash</div>
             </div>
-            <div class="col-12 d-md-none">
-              <hr class="why-me-line-row separator-line">
+            <div class="skill">
+              <div class="skill-text">Gulp</div>
             </div>
-            <div class="col-12 col-md-6">
-              <div class="why-me-box">
-                <div class="why-me-box-title section-title body-title section no-spacing">Efficient</div>
-                <div class="why-me-box-description section-title body-text section">I've worked with a wide variety of development subjects. These range from: gaming, mobile apps, full stack web development, and secure development. Learning all of these different ideologies has helped me constantly refine and develop better ways to handle any situation I come up against. Looking at general standards like the Google and W3Schools JavaScript standards provide a way to easily learn and code with best coding guidelines in mind. There are many ways to solve problems, but some are more efficient and easier to maintain and read. When writing software, I strive to have clear code and elegant solutions.</div>
-              </div>
+            <div class="skill">
+              <div class="skill-text">Adobe Photoshop</div>
             </div>
-            <div class="col-12">
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <hr class="why-me-line-row separator-line">
-                </div>
-                <div class="col-12 col-md-6 d-none d-sm-none d-md-block">
-                  <hr class="why-me-line-row separator-line">
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="why-me-box">
-                <div class="why-me-box-title section-title body-title section no-spacing">Passionate</div>
-                <div class="why-me-box-description section-title body-text section">I was raised on logic puzzles and games, early in my career the skills that had grown as I grew, translated perfectly into the role of a developer. Since my first large programming projects when I created simple little video games, I have had an unquenchable thirst to learn and develop in new and exciting ways. A lot of my freetime is spent learning about new technologies in an effort to constantly expand my knowledge and potential development opportunities.  I love what I do, and plan to continue for a long time.</div>
-              </div>
-            </div>
-            <div class="col-12 d-md-none">
-              <hr class="why-me-line-row separator-line">
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="why-me-box">
-                <div class="why-me-box-title section-title body-title section no-spacing">Adaptable</div>
-                <div class="why-me-box-description section-title body-text section">I take the time to ask questions in order to inform my decisions and gain valuable feedback from others. When there are suggestions or new information I strive to be flexible. Outside of work I actively engage in projects to constantly further my skills. When given suggested improvements I can take the idea and run with it. I pay attention to those around me, how they work and the kind of work they produce, in order to inform myself on what I need to work on and how I can improve.</div>
-              </div>
+            <div class="skill">
+              <div class="skill-text">Adobe Illustrator</div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row main-row skills-row container-spacing">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-          <div class="main-row-title h3-heading">Skills</div>
-          <hr class="main-row-title-line separator-line">
-          <div class="skills-item-container skill-tags">
-            <div class="skill-title body-title">Languages &amp; Libraries</div>
-            <div class="skill-items">
-              <div class="skill">
-                <div class="tag-text">Css</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Sass</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">JavaScript</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Jest</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Node.js</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Vue</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">jQuery</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Ext Js</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">HTML</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Bootstrap</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">MySQL</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Pug/Jade</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">PHP</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Smarty</div>
-              </div>
+        </article>
+        <article class="skills-item-container skill-check">
+          <h4>Knowledge</h4>
+          <div class="skill-items">
+            <div class="skill">
+              <div class="skill-text">Agile Development (SCRUM)</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Unit &amp; Integration Testing</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Mobile First Development</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">Project Management</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">ES6</div>
+            </div>
+            <div class="skill">
+              <div class="skill-text">SEO</div>
             </div>
           </div>
-          <div class="skills-item-container skill-check">
-            <div class="skill-title body-title">Tools</div>
-            <div class="skill-items">
-              <div class="skill">
-                <div class="tag-text">Git</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Bash</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Gulp</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Adobe Photoshop</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Adobe Illustrator</div>
-              </div>
-            </div>
-          </div>
-          <div class="skills-item-container skill-check">
-            <div class="skill-title body-title">Knowledge</div>
-            <div class="skill-items">
-              <div class="skill">
-                <div class="tag-text">Agile Development (SCRUM)</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Unit Testing</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Mobile First Development</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">Project Management</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">ES6</div>
-              </div>
-              <div class="skill">
-                <div class="tag-text">SEO</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row main-row contact-row container-spacing">
-        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" id="contactMeSection">
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <form class="has-validation" action="javascript:void(0);">
-                <input type="text" name="cf_name" placeholder="Name" required>
-                <input type="email" name="cf_email" placeholder="Email Address" required>
-                <textarea name="cf_message" placeholder="Message" required></textarea>
-                <div class="g-recaptcha" data-sitekey="6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb"></div>
-                <button class="submit-button reset-button">Submit</button>
-              </form>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="references-container">
-                <div class="references-title body-title section">References</div>
-                <hr class="main-row-title-line separator-line">
-                <div class="reference">
-                  <p class="reference-text body-text section">As part of the Atom editor community, I’ve interacted and worked with Zoë for a couple months.  In every instance, she has been inquisitive, helpful and motivated. She has asked for ideas of things she could work on and when given some, she would respond swiftly, digging right in and getting to work. Having someone so eager to help with things that need doing is very refreshing.<br><br>Speaking with her, she has shown the ability to take things learned from many conversations and apply them, often with minimal instruction. She has a tendency toward experimentation with the concepts given, so I have been confident that even if I don’t explain things exactly she’ll get where I’m going with things and arrive at the proper destination.<br><br>Given her obvious intelligence, drive and interest in refining her craft, I’m confident that Zoë will do many great things and would be an asset to any organization.</p><a class="reference-author body-text section" href="https://github.com/lee-dohm" rel="nofollow">Lee Dohm</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row footer-row">
-        <div class="footer-container">
-          <div class="footer-container-row">
-            <div class="row">
-              <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-                <div class="row">
-                  <div class="col-12 col-md-4 col-md-push-8">
-                    <div class="social-media-links"><a href="https://github.com/pixilz" target="_blank" rel="nofollow"><i class="fa fa-github-square" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/" target="_blank" rel="nofollow"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></div>
-                  </div>
-                  <div class="col-12 col-md-4"><a class="source-code-link" href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow">View Source on GitHub</a></div>
-                  <div class="col-12 col-md-4 col-md-pull-8">
-                    <div class="copyright-text">Copyright &copy;  Zo&euml; Clarno</div>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+      <section class="contact-me-section alt">
+        <form novalidate>
+          <input type="text" name="cf_name" placeholder="Name" required>
+          <input type="email" name="cf_email" placeholder="Email Address" required>
+          <textarea name="cf_message" placeholder="Message" required></textarea>
+          <div class="g-recaptcha" data-sitekey="6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb"></div>
+          <button class="site-button">Submit</button>
+        </form>
+        <section class="references-container">
+          <h4>References</h4>
+          <hr class="separator-line">
+          <article class="reference">
+            <p>As part of the Atom editor community, I’ve interacted and worked with Zoë for a couple months.  In every instance, she has been inquisitive, helpful and motivated. She has asked for ideas of things she could work on and when given some, she would respond swiftly, digging right in and getting to work. Having someone so eager to help with things that need doing is very refreshing.<br><br>Speaking with her, she has shown the ability to take things learned from many conversations and apply them, often with minimal instruction. She has a tendency toward experimentation with the concepts given, so I have been confident that even if I don’t explain things exactly she’ll get where I’m going with things and arrive at the proper destination.<br><br>Given her obvious intelligence, drive and interest in refining her craft, I’m confident that Zoë will do many great things and would be an asset to any organization.</p><a class="reference-author" href="https://github.com/lee-dohm" rel="nofollow">Lee Dohm</a>
+          </article>
+        </section>
+      </section>
+      <footer>
+        <div class="social-media-links"><a href="https://github.com/pixilz" target="_blank" rel="nofollow"><i class="fa fa-github-square" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/" target="_blank" rel="nofollow"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></div><a class="source-code-link" href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow">View Source on GitHub</a>
+        <div class="copyright-text">Copyright &copy; 2019 Zo&euml; Clarno</div>
+      </footer>
+    </main>
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
     <script src="./public/javascripts/homepage.js"></script>

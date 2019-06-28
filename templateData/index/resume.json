@@ -58,12 +58,13 @@
             "title": "Technical experience in:",
             "list": [
                 "Agile Development (SCRUM)",
-                "Javascript (jQuery, Ext Js)",
-                "Node.Js (Selenium)",
+                "Javascript (jQuery, ExtJS, Vue)",
+                "Node.Js (Selenium, Jest, Puppeteer, Webpack)",
                 "HTML (Bootstrap)",
                 "CSS (Sass, Responsivity)",
                 "PHP (Composer, Smarty)",
-                "SQL (MySQL)"
+                "SQL (MySQL)",
+                "Testing (Jest, Puppeteer, Backstop, PHPUnit)"
             ]
         }
     }]

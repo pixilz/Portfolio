@@ -16,52 +16,14 @@ toastr.options = {
     "hideMethod": "fadeOut"
 };
 
-/**
- * Hero sizing sets the height of the hero image based upon how much room it is allowed
- * in terms of screen real estate.
- * @method heroSizing
- * @return {undefined}
- */
-function heroSizing() {
-    var /*$headerHeight = $('#header').height(),*/
-        $aboutHeight = $('#section-about-col').height(),
-        $windowHeight = $(window).height(),
-        $windowWidth = $(window).width(),
-        $profileImage = $('#section-profileImage'),
-        $heroImage = $(".img-responsive.hero"),
-        newHeight = $windowHeight - ( /*$headerHeight + */ $aboutHeight);
-
-    $profileImage.height(newHeight);
-
-    $heroImage.removeAttr("style");
-
-    //Used to override css if the height of the image isn't enough.
-    if ($heroImage.outerHeight() < newHeight) {
-        $heroImage.css("max-width", "none");
-        $heroImage.css("min-width", 0);
-        $heroImage.css("height", newHeight);
-    } else if($heroImage.outerWidth() < $windowWidth) {
-        $heroImage.css('width', Math.min($windowWidth, 1920));
-    }
-}
-
-$(window).resize(function() {
-    heroSizing();
-});
-
-$(window).on('load', function() {
-    $('#loader-container').fadeOut('slow');
-    $('body').css('overflow', 'auto');
-
-    heroSizing();
-});
-
-$(function() {
+$(function () {
     emailjs.init('user_9oPetXteepojqp5jJWT33');
 
-    $('#contactMeSection textarea').each(function() {
+    var $form = $('form');
+
+    $('.contact-me-section textarea').each(function () {
         this.setAttribute('style', 'height:' + (this.scrollHeight * 2 + 5) + 'px;overflow-y:hidden;');
-    }).on('input', function() {
+    }).on('input', function () {
         var $document = $(document),
             initialScrollTop = $document.scrollTop();
 
@@ -77,26 +39,27 @@ $(function() {
         $document.scrollTop(initialScrollTop);
     });
 
-    $('.submit-button').on('click', function() {
-        var $form = $(this).closest('form'),
-            data = validateForm($form);
+    $form.on('submit', function () {
+        var data = validateForm($form);
 
         if (data) {
             emailjs
                 .send('gmail', 'template_nTztvt19', data)
                 .then(
-                    function() {
-                       Swal("Success!", "Your message has been sent.", "success");
-                    }, function(error) {
+                    function () {
+                        Swal("Success!", "Your message has been sent.", "success");
+                    }, function (error) {
                         Swal("Error...", 'An error occurred while sending an email.', "error");
 
                         console.log(error);
                     }
                 );
         }
+
+        return false;
     });
 
-    $('form.has-validation').find(':input').on('change', function() {
+    $form.find(':input').on('change', function () {
         removeInvalidMark($(this));
     });
 });
@@ -107,8 +70,7 @@ function validateForm($form) {
         recaptcha = true,
         formData = {};
 
-
-    $.each($inputs, function(i, input) {
+    $.each($inputs, function (i, input) {
         var $input = $(input);
 
         if ($input.attr('required') && !$input.val().trim()) {

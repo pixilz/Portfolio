@@ -1,270 +1,95 @@
-// main: styles.scss
+%section-spacing {
+    padding-right: $section-constraint /2;
+    padding-left: $section-constraint / 2;
 
-%beforeIcon {
-    font-size: 24px;
-    color    : lighten($font-color, 10%);
-    position : absolute;
-    left     : -25px;
-    top      : 50%;
-    @include transform(translateY(-50%));
+    @media(min-width: $screen-md) {
+        padding-right: $section-constraint-md / 2;
+        padding-left: $section-constraint-md / 2;
+
+        @media(min-width: $screen-lg) {
+            padding-right: $section-constraint-lg / 2;
+            padding-left: $section-constraint-lg / 2;
+        }
+    }
 }
 
-body.indexBody {
-    .img-responsive {
-        margin: 0 auto;
-    }
-
-    .h2-hero {
-        padding      : 10px 0;
-        border-top   : 1px solid $section-separator-color;
-        border-bottom: 1px solid $section-separator-color;
-        margin-left  : auto;
-        margin-right : auto;
-    }
-
-    #section-intro {
-        position: relative;
-        left    : 0;
-        top     : 0;
-        z-index : 10;
-    }
-
-    #logo-section {
-        position  : absolute;
-        top       : 10%;
+body.index-body {
+    main {
         text-align: center;
-        z-index   : 99;
-        width     : 100%;
-    }
 
-    #section-profileImage {
-        background-color: #606060;
-        overflow  : hidden;
-        position  : relative;
-        height    : 600px;
-        margin    : 0 -15px;
-        max-height: 1000px;
-        min-height: 525px;
-        @media(min-width: 1500px) {
-            height: 700px;
-        }
-
-        div {
-            min-width: 900px;
-            height   : 100%;
-
-            img {
-                position : fixed;
-                min-width: 900px;
-            }
-        }
-    }
-
-    .main-row {
-        background-color: #fff;
-        position        : relative;
-        text-align      : center;
         @media(min-width: $screen-sm) {
             text-align: left;
         }
 
-        &:first-child {
-            z-index: -1; //This is here in order to make everything float above the fixed hero image.
-        }
+        > section {
+            background-color: $section-background-color;
+            color: $section-font-color;
+            padding-bottom: $section-bottom-spacing;
 
-        .main-row-title-line {
-            width : 50px;
-            margin: 15px auto 0;
-            @media(min-width: $screen-sm) {
-                margin-right: 0;
-                margin-left : 0;
+            @extend %section-spacing;
+
+            &.alt {
+                background-color: $alt-section-background-color;
+                color: $alt-section-font-color;
             }
         }
-    }
 
-    #section-about-col {
-        background-color: $section-color;
-    }
-
-    #section-about {
-        overflow: hidden;
-    }
-
-    .why-me-row {
-        background-color: $section-color;
-        color           : $section-font-color;
-
-        .why-me-box > .body-title {
-            margin-top: 0;
+        .tag, .skill-tags .skill {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 2px 10px;
+            margin-top: 10px;
+            border-radius: 11px;
+            box-shadow: 0 0 0 1px $tag-border-color;
         }
-    }
 
-    .skills-row {
-        .skills-item-container {
-            &.skill-tags {
-                .skill {
-                    @include tag();
-                }
-            }
+        section.intro-section {
+            display: flex;
+            flex-direction: column;
+            background-color: transparent;
+            padding: 0;
+            min-height: 100vh;
 
-            &.skill-check {
-                padding-bottom: 15px;
-                @media(min-width: $screen-sm) {
-                    margin-right: 100px;
-                    display     : inline-block;
+            .hero-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 1 0 auto;
 
-                    &:last-child {
-                        margin-right: 0;
+                .logo-container {
+                    padding: 0 $section-constraint / 2;
+                    text-align: center;
+
+                    .logo {
+                        max-width: 100%;
                     }
                 }
 
-                .skill-items {
-                    padding-top: 15px;
-                }
-
-                .skill {
-                    position: relative;
-                    @media(min-width: $screen-sm) {
-                        margin-left : 20px;
-                        padding-left: 20px;
-                    }
-
-                    .tag-text {
-                        display: inline-block;
-                        @media(min-width: $screen-sm) {
-                            display: block;
-                        }
-                    }
-
-                    &:before {
-                        font-family: "Material Icons";
-                        content    : "\e876";
-                        vertical-align: middle;
-                        padding-right: 5px;
-                        margin-left: -15px;
-                        @media(min-width: $screen-sm) {
-                            vertical-align: baseline;
-                            position: absolute;
-                            padding: 0;
-                            margin: 0;
-                            top      : 50%;
-                            left     : 0;
-                            transform: translateY(-50%);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .contact-row {
-        background-color: $section-color;
-        color           : $section-font-color;
-
-        #contactMeSection {
-            form {
-                .submit-button {
-                    @include site-button($width: 304px);
-                }
-
-                 > input,
-                > div {
-                    width: 304px;
-                }
-
-                .g-recaptcha {
+                .hero-container {
                     overflow: hidden;
-                    margin: 20px auto 0;
-                    @media(min-width: $screen-sm) {
-                        margin-left : 0;
-                        margin-right: 0;
+                    max-height: 100vh;
+
+                    .hero-image {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
                     }
-                }
-
-                .invalid-input-error {
-                    padding-top: 3px;
-                    color      : $error-color;
-                    text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
-                    text-align: left;
-                    margin: 0 auto;
-                    @media(min-width: $screen-sm) {
-                        margin: 0;
-                    }
-                }
-
-                > input:not([type="submit"]),
-                > textarea {
-                    color: #fff;
-                    display         : block;
-                    padding         : 0;
-                    border          : none;
-                    background-color: transparent;
-                    border-bottom   : solid 2px darken(#969696, 10%);
-                    transition      : border 0.3s;
-                    resize          : none;
-                    height          : 25px;
-                    margin          : 20px auto 0;
-
-                    &.invalid-input {
-                        border-bottom-color: $error-color;
-                    }
-                    @media(min-width: $screen-sm) {
-                        margin-left : 0;
-                        margin-right: 0;
-
-                        &:first-child {
-                            margin-top: 40px;
-                        }
-                    }
-
-                    &:focus {
-                        outline      : none;
-                        border-bottom: solid 2px $section-font-color;
-                    }
-                }
-
-                > textarea {
-                    width : 304px;
-                    resize: vertical;
                 }
             }
 
-            .references-container {
-                .reference {
-                    .reference-text {
-                        font-size: 13px;
-                    }
+            .about-me {
+                background-color: $alt-section-background-color;
+                color: $alt-section-font-color;
+                padding-bottom: $section-bottom-spacing;
 
-                    .reference-author {
-                        font-size    : 12px;
-                        font-style   : italic;
-                        display      : inline-block;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-                        color        : #fff;
-
-                        &:hover {
-                            cursor         : pointer;
-                            color          : #4F8FF6;
-                            text-decoration: none;
-                        }
-
-                        &::before {
-                            content: '~ ';
-                        }
-                    }
-                }
+                @extend %section-spacing;
             }
         }
-    }
 
-    .portfolio-row {
-        .project-container {
-            .project-title {
-                font-size  : 20px;
-                font-weight: 300;
-            }
-
+        .portfolio-section {
             .project-asset-container {
+                margin-top: 10px;
                 position: relative;
 
                 img {
@@ -293,92 +118,182 @@ body.indexBody {
                 }
             }
 
-            .project-description {
-                @include line-calc(35px);
-                ul {
-                    list-style-position: inside;
+            .site-button {
+                margin-top: 30px;
+            }
+        }
+
+        .why-me-section {
+            .why-me-container {
+                @media(min-width: $screen-md) {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
                 }
-            }
-        }
-    }
 
-    .section-title {
-        span {
-            display: inline-block;
-        }
+                .why-me {
+                    @media(min-width: $screen-md) {
+                        flex: 1 1 0;
+                        max-width: 49%;
 
-        &.white-section-title {
-            position : relative;
-            max-width: 800px;
-
-            span {
-                border-color: lighten($font-color, 25%);
-            }
-        }
-    }
-
-    .section-text,
-    .section-title {
-        text-align: center;
-        @media(min-width: $screen-sm) {
-            text-align: left;
-        }
-    }
-
-    .resume-section-row {
-        .resume-row {
-            max-width   : 800px;
-            margin      : 0 auto;
-            padding-left: 20px;
-
-            .resume-titles {
-                float: left;
-
-                .resume-subtitle {
-                    font-style: italic;
-                }
-            }
-
-            .resume-dates {
-                clear    : both;
-                min-width: 200px;
-                @media(min-width: $screen-xs) {
-                    float: right;
-                    clear: none;
-                }
-            }
-
-            .resume-list {
-                > ul > li {
-                    display : block;
-                    position: relative;
-
-                    .arrow {
-                        position: relative;
-                    }
-
-                    &:not(.no-arrow)::before,
-                    .arrow::before {
-                        content    : '\e5CC';
-                        font-family: 'material icons';
-                        @extend %beforeIcon;
-                    }
-
-                    ul {
-                        padding-left: 20px;
-
-                        li {
-                            position: relative;
-                            display : block;
-
-                            &::before {
-                                height     : 200%;
-                                font-family: $font-family;
-                                content    : '-';
-                                @extend %beforeIcon;
-                            }
+                        &:nth-child(2)::before {
+                            display: none !important;
                         }
                     }
+
+                    &:first-child ~ .why-me::before {
+                        content: '';
+                        display: block;
+                        border-top: 1px solid $separator-color;
+                    }
+                }
+
+                .why-me-separator {
+                    display: none;
+
+                    @media(min-width: $screen-md) {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .skills-section {
+            .skill-check {
+                @media(min-width: $screen-sm) {
+                    display: inline-block;
+                    vertical-align: top;
+
+                    + .skill-check {
+                        margin-left: 30px;
+                    }
+                }
+
+                .skill {
+                    &::before {
+                        content: '✓';
+                        display: inline-block;
+                    }
+
+                    .skill-text {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .contact-me-section {
+            padding-top: 20px;
+
+            @media(min-width: $screen-sm) {
+                display: flex;
+
+                > * {
+                    flex: 1 1 50%;
+                }
+            }
+
+            form {
+                .site-button {
+                    margin-bottom: 20px;
+
+                    @media(min-width: $screen-sm) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                > :not(.invalid-input-error) {
+                    display: block;
+                    width: 304px;
+                    margin: 20px auto 0;
+
+                    @media(min-width: $screen-sm) {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+
+                > input, > textarea {
+                    color: $light-font-color;
+                    padding: 0;
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 2px solid $input-border-color;
+                    transition: border 0.3s;
+                    height: 25px;
+
+                    &:focus {
+                        outline: none;
+                        border-bottom: solid 2px $input-border-color-focus;
+                    }
+
+                    &.invalid-input {
+                        border-color: $error-color;
+                    }
+                }
+
+                > textarea {
+                    resize: vertical;
+                }
+
+                .invalid-input-error {
+                    color: lighten($error-color, 10%);
+                }
+            }
+
+            .references-container {
+                .reference-author {
+                    font-size: 0.9rem;
+                    font-style: italic;
+                    display: inline-block;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                    color: $link-font-color;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $link-font-color-hover;
+                        cursor: pointer;
+                    }
+
+                    &::before {
+                        content: '~ ';
+                    }
+                }
+            }
+        }
+
+        footer {
+            background-color: $footer-background-color;
+            color: $footer-font-color;
+            padding: 20px;
+
+            @media(min-width: $screen-sm) {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .social-media-links {
+                > a {
+                    color: $footer-font-color;
+
+                    & + a {
+                        margin-left: 5px;
+                    }
+
+                    .fa {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .source-code-link {
+                color: $link-font-color;
+
+                &:hover {
+                    color: $link-font-color-hover;
+                    cursor: pointer;
                 }
             }
         }

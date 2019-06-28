@@ -1,0 +1,40 @@
+.site-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0 15px;
+    height: 30px;
+    min-width: 150px;
+    background-color: $button-background-color;
+    color: $button-font-color;
+    border-radius: 3px;
+    text-decoration: none;
+    line-height: 1;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $button-background-color-hover;
+        color: $button-font-color;
+        text-decoration: none;
+    }
+}
+
+hr.separator-line {
+    margin: 0 auto;
+    width: 50px;
+
+    border: 0;
+    border-top: 1px solid $separator-color;
+
+    @media(min-width: $screen-sm) {
+        margin: 0;
+    }
+}

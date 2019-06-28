@@ -1,141 +1,97 @@
 extends templates/layout.pug
 
 block preBody
-    -(bodyClasses.push("indexBody"))
+    -(bodyClasses.push('index-body'))
 
 block append footerscripts
     script(src='https://www.google.com/recaptcha/api.js')
     script(src='https://cdn.emailjs.com/sdk/2.3.2/email.min.js')
     script(src='./public/javascripts/homepage.js')
 
-block header
-    include includes/loader.pug
-
 block content
-    #content.container-fluid
-        .row.main-row
-            .col
-                #section-intro
-                    #logo-section
-                        img.img-responsive.image-spacing(src='./public/images/logo.png')
-                        h1.h1-heading Zo&euml; Clarno
-                        h2.h2-heading Senior Web Developer
-                    #section-profileImage
-                        div
-                            img.img-responsive.hero(src='./public/images/hero.jpg')
-        .row.main-row.dark.container-spacing
-            #section-about-col.col
-                .row
-                    #section-about.container-spacing
-                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                            .section-title.h3-heading.section
-                                span About Me
-                            hr.main-row-title-line.separator-line
-                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                            .section-text.body-text.section
-                                | When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.
-                                br
-                                br
-                                | I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.
+    main(role='main')
+        section.intro-section.alt
+            section.hero-section
+                .logo-container
+                    img.logo(src='./public/images/logo.png')
+                    h1 Zo&euml; Clarno
+                    h2 Senior Web Developer
+                .hero-container
+                    img.hero-image(src='./public/images/hero.jpg')
+            article.about-me
+                h3 About Me
+                hr.separator-line
+                p
+                    | When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.
+                p
+                    | I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.
+                a.site-button(href='./public/Resume-ZoeClarno.pdf') View Resume
+        section.portfolio-section
+            h3 Portfolio
+            hr.separator-line
+            each project in PROJECTS.projects
+                article.project-container
+                    h4= project.title
+                    .project-asset-container
+                        if project.assets.desktop
+                            .project-desktop-asset
+                                img(src=project.assets.desktop)
+                        if project.assets.tablet
+                            .project-tablet-asset
+                                img(src=project.assets.tablet)
+                        if project.assets.mobile
+                            .project-mobile-asset
+                                img(src=project.assets.mobile)
+                    summary!= project.description
+                    .project-tags
+                        each tag in project.skills
+                            .tag
+                                .tag-text= tag
+                    if project.view
+                        a.site-button(href=project.view target='_blank' rel='nofollow') View
+                    else if project.noView
+                        .project-no-view= project.noView
+        section.why-me-section.alt
+            h3 Why Me?
+            hr.separator-line
+            .why-me-container
+                each why, key in WHYME.list
+                    article.why-me
+                        h4= why.title
+                        p= why.description
+                    if WHYME.list[key + 1] && (key + 1) % 2 === 0
+                        .why-me-separator
+        section.skills-section
+            h3 Skills
+            hr.separator-line
+            each skillset in SKILLS.skills
+                article.skills-item-container(class=skillset.tags ? 'skill-tags' : 'skill-check')
+                    h4= skillset.name
+                    .skill-items
+                        each skill in skillset.items
+                            .skill
+                                .skill-text= skill
+        section.contact-me-section.alt
+            form(novalidate)
+                input(type='text', name='cf_name', placeholder='Name', required)
+                input(type='email', name='cf_email', placeholder='Email Address', required)
+                textarea(name='cf_message', placeholder='Message', required)
+                .g-recaptcha(data-sitekey='6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb')
+                button.site-button Submit
+            section.references-container
+                h4 References
+                hr.separator-line
+                each reference in REFERENCES.inuse
+                    article.reference
+                        p!= reference.text
+                        a.reference-author(href=reference.authorLink rel='nofollow')= reference.author
 
-                        .col-12
-                            br
-                            br
-                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                            a.aboutSectionBtn.site-button(href='./public/Resume-ZoeClarno.pdf') View Resume
-        .row.main-row.portfolio-row.container-spacing
-            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                .main-row-title.h3-heading Portfolio
-                hr.main-row-title-line.separator-line
-                each project in PROJECTS.projects
-                    .project-container
-                        .project-title.body-title= project.title
-                        hr.main-row-title-line
-                        .project-asset-container
-                            if project.assets.desktop
-                                .project-desktop-asset
-                                    img(src=project.assets.desktop)
-                            if project.assets.tablet
-                                .project-tablet-asset
-                                    img(src=project.assets.tablet)
-                            if project.assets.mobile
-                                .project-mobile-asset
-                                    img(src=project.assets.mobile)
-                        .project-description.body-text!= project.description
-                        .project-tags
-                            each tag in project.skills
-                                .item-tag
-                                    .tag-text= tag
-                        if project.view
-                            a.project-view-btn.site-button(href=project.view target="_blank" rel="nofollow") View
-                        else if project.noView
-                            .project-no-view= project.noView
-        .row.main-row.why-me-row.container-spacing
-            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                .main-row-title.section-title.h3-heading.section Why Me?
-                hr.main-row-title-line.separator-line
-                .why-me-box-title.section-title.body-title.section
-                .row
-                    each why, key in WHYME.list
-                        .col-12.col-md-6
-                            .why-me-box
-                                .why-me-box-title.section-title.body-title.section.no-spacing= why.title
-                                .why-me-box-description.section-title.body-text.section= why.description
-                        if WHYME.list[key+1] && (key + 1) % 2 === 0
-                            .col-12
-                                .row
-                                    .col-12.col-md-6
-                                        hr.why-me-line-row.separator-line
-                                    .col-12.col-md-6.d-none.d-sm-none.d-md-block
-                                        hr.why-me-line-row.separator-line
-                        else if WHYME.list[key+1]
-                            .col-12.d-md-none
-                                hr.why-me-line-row.separator-line
-        .row.main-row.skills-row.container-spacing
-            .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                .main-row-title.h3-heading Skills
-                hr.main-row-title-line.separator-line
-                each skillset in SKILLS.skills
-                    div(class=skillset.tags ? "skills-item-container skill-tags" : "skills-item-container skill-check")
-                        .skill-title.body-title #{skillset.name}
-                        .skill-items
-                            each skill in skillset.items
-                                .skill
-                                    .tag-text #{skill}
-        .row.main-row.contact-row.container-spacing
-            #contactMeSection.col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                .row
-                    .col-12.col-sm-6
-                        form.has-validation(action='javascript:void(0);')
-                            input(type='text', name='cf_name', placeholder='Name', required)
-                            input(type='email', name='cf_email', placeholder="Email Address", required)
-                            textarea(name='cf_message', placeholder="Message", required)
-                            .g-recaptcha(data-sitekey='6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb')
-                            button.submit-button.reset-button Submit
-                    .col-12.col-sm-6
-                        .references-container
-                            .references-title.body-title.section References
-                            hr.main-row-title-line.separator-line
-                            each ref in REFERENCES.inuse
-                                .reference
-                                    p.reference-text.body-text.section!= ref.text
-                                    a.reference-author.body-text.section(href=ref.authorLink rel='nofollow')!= ref.author
-        .row.footer-row
-            .footer-container
-                .footer-container-row
-                    .row
-                        .col-12.col-md-10.offset-md-1.col-lg-8.offset-lg-2
-                            .row
-                                .col-12.col-md-4.col-md-push-8
-                                    .social-media-links
-                                        a(href='https://github.com/pixilz' target="_blank" rel="nofollow")
-                                            i.fa.fa-github-square(aria-hidden="true")
-                                        a(href='https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/' target="_blank" rel="nofollow")
-                                            i.fa.fa-linkedin-square(aria-hidden="true")
-                                .col-12.col-md-4
-                                    a.source-code-link(href="https://github.com/pixilz/Portfolio" target="_blank" rel="nofollow")
-                                        |View Source on GitHub
-                                .col-12.col-md-4.col-md-pull-8
-                                    .copyright-text
-                                        |Copyright &copy; #{year} Zo&euml; Clarno
-                                .clearfix
+        footer
+            .social-media-links
+                a(href='https://github.com/pixilz' target='_blank' rel='nofollow')
+                    i.fa.fa-github-square(aria-hidden='true')
+                a(href='https://www.linkedin.com/in/zo%C3%AB-clarno-74048871/' target='_blank' rel='nofollow')
+                    i.fa.fa-linkedin-square(aria-hidden='true')
+            a.source-code-link(href='https://github.com/pixilz/Portfolio' target='_blank' rel='nofollow')
+                | View Source on GitHub
+            .copyright-text Copyright &copy; #{new Date().getFullYear()} Zo&euml; Clarno
