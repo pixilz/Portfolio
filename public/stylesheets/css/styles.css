@@ -136,9 +136,21 @@ body.index-body main {
         max-height: 100vh; }
         body.index-body main section.intro-section .hero-section .hero-container .hero-image {
           position: fixed;
+          z-index: -1;
           top: 0;
           left: 0;
-          z-index: -1; }
+          bottom: 0;
+          right: 0;
+          background-image: url("/public/images/hero.jpg");
+          background-size: cover; }
+          body.index-body main section.intro-section .hero-section .hero-container .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            backdrop-filter: blur(10px); }
     body.index-body main section.intro-section .about-me {
       background-color: #263238;
       color: #fff;
