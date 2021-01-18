@@ -3,32 +3,42 @@
 		"name": "Languages & Libraries",
 		"tags": true,
 		"items": [
-			"Css",
-			"Sass",
-			"JavaScript",
-			"Jest",
-			"Puppeteer",
-			"Backstop",
-			"Node.js",
 			"Vue",
+			"Vuetify",
+			"Storybook",
+			"JavaScript",
 			"jQuery",
-			"ExtJS",
+			"Ext JS",
+			"Node.JS",
+			"Webpack",
+			"Jest",
+			"BackstopJS",
+			"Cypress",
+			"Puppeteer",
+			"CSS",
+			"Sass",
 			"HTML",
-			"Bootstrap",
-			"MySQL",
-			"Pug/Jade",
 			"PHP",
-			"Smarty"
+			"Composer",
+			"Smarty",
+			"Doctrine",
+			"PHPUnit",
+			"MySQL",
+			"MariaDB",
+			"MongoDB",
+			"Pug/Jade"
 		]
 	}, {
 		"name": "Tools",
 		"tags": false,
 		"items": [
-			"Git",
+			"Microsoft Office Suite",
+			"Google Drive",
+			"Github",
+			"Asana",
+			"Slack",
 			"Bash",
-			"Gulp",
-			"Adobe Photoshop",
-			"Adobe Illustrator"
+			"Git"
 		]
 	},{
 		"name": "Knowledge",
