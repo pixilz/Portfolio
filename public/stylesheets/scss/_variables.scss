@@ -12,8 +12,15 @@ $link-font-color-hover: #4F8FF6;
 $hero-font-color: $light-font-color;
 $font-color: $dark-font-color;
 
-$separator-color: #a94442;
+$separator-color: #8CAE1D;
 $tag-border-color: #000;
+
+$tag-background-color: #90a8b4;
+$length-of-tag-point: 10px;
+$tag-font-color: white;
+$tag-dot-size: 6px;
+$tag-height: 26px;
+$tag-hard-corner-radius: 0px;
 
 $input-border-color: #7d7d7d;
 $input-border-color-focus: #fff;
@@ -28,7 +35,7 @@ $section-constraint: 30px;
 $section-constraint-md: 16vw;
 $section-constraint-lg: 34vw;
 
-$button-background-color: #a94442;
+$button-background-color: #8CAE1D;
 $button-background-color-hover: darken($button-background-color, 10%);
 $button-font-color: $light-font-color;
 

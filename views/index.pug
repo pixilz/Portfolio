@@ -22,9 +22,11 @@ block content
                 h3 About Me
                 hr.separator-line
                 p
-                    | When not working on projects I like to spend my time playing games, hiking, and reading various articles about new technologies, exploits, or how current tools are being built.
+                    | I am a self-taught, dedicated full-stack developer looking to consistently challenge myself and contribute to a community. I am passionate about improving my skills through collaboration and enjoy helping other developers improve and develop their own skills. As a self-taught developer, I have overcome a lot of challenges, which has made me a great asset in training others. It has also increased my passion for learning new technologies and solutions.
                 p
-                    | I am a dedicated professional developer looking to consistently challenge myself and contribute to a community. I'm always looking for opportunities to learn from those willing to share their knowledge. I have recently started participating in the open source community, contributing to largely used projects such as the Atom text editor.
+                    | I flourish when using code to solve dynamic problems with well documented solutions in easily maintainable and adaptable ways. In addition to code reviews and streamlining processes to save people time. I have both helped maintain existing websites as well as lead projects to add features using current technologies. Helping grow new standards, practices, and processes is fulfilling and has made me invaluable to various teams.
+                p
+                    | When not working I like to spend my time playing board games, especially those with beautiful artwork, and going for hikes in many of the state and national parks available nearby. I also enjoy cooking, which provides me with a creative outlet to find interesting solutions to a more analog set of problems.
                 a.site-button(href='./public/Resume-ZoeClarno.pdf') View Resume
         section.portfolio-section
             h3 Portfolio
@@ -32,6 +34,7 @@ block content
             each project in PROJECTS.projects
                 article.project-container
                     h4= project.title
+                    div!= project.description
                     .project-asset-container
                         if project.assets.desktop
                             .project-desktop-asset
@@ -42,13 +45,12 @@ block content
                         if project.assets.mobile
                             .project-mobile-asset
                                 img(src=project.assets.mobile)
-                    summary!= project.description
                     .project-tags
                         each tag in project.skills
                             .tag
                                 .tag-text= tag
                     if project.view
-                        a.site-button(href=project.view target='_blank' rel='nofollow') View
+                        a.site-button(href=project.view target='_blank' rel='nofollow') View Website
                     else if project.noView
                         .project-no-view= project.noView
         section.why-me-section.alt
@@ -72,19 +74,16 @@ block content
                             .skill
                                 .skill-text= skill
         section.contact-me-section.alt
-            form(novalidate)
-                input(type='text', name='cf_name', placeholder='Name', required)
-                input(type='email', name='cf_email', placeholder='Email Address', required)
-                textarea(name='cf_message', placeholder='Message', required)
-                .g-recaptcha(data-sitekey='6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb')
-                button.site-button Submit
-            section.references-container
-                h4 References
+            section
+                h4 Contact Me
                 hr.separator-line
-                each reference in REFERENCES.inuse
-                    article.reference
-                        p!= reference.text
-                        a.reference-author(href=reference.authorLink rel='nofollow')= reference.author
+                form(novalidate)
+                    input(type='text', name='cf_name', placeholder='Name', required)
+                    input(type='email', name='cf_email', placeholder='Email Address', required)
+                    textarea(name='cf_message', placeholder='Message', required)
+                    .g-recaptcha(data-sitekey='6LedySUTAAAAACQVHcxOxwr_Ib23Mh9fDTWxEnQb')
+                    button.site-button Submit
+            section.references-container
 
         footer
             .social-media-links

@@ -11,6 +11,7 @@
 			"Ext JS",
 			"Node.JS",
 			"Webpack",
+            "Babel",
 			"Jest",
 			"BackstopJS",
 			"Cypress",
@@ -36,7 +37,9 @@
 			"Google Drive",
 			"Github",
 			"Asana",
+            "Jira",
 			"Slack",
+            "Microsoft Teams",
 			"Bash",
 			"Git"
 		]

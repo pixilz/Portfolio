@@ -1,7 +1,7 @@
 {
 	"projects": [{
-		"title": "StateFoodSafety.com",
-        "description": "<p>The primary website for AboveTraining. During my time with AboveTraining I have been able to gain experience and knowledge for general web development. The purpose is to provide E-Learning for a variety of certifications and training in the food industry. I have been able to pitch and implement tools and features that have been beneficial to the efficiency, flow, and overall user experience on StateFoodSafety.com.</p>These include:<ul><li>Easier product management.</li><li>Updating all pages to better use templates for faster development and maintenance.</li><li>Minor integration testing relating to database and client data.</li><li>Security auditing for common web exploits. (XSS, passwords, information leak, etc…)</li><li>Small libraries to handle page elements. (modal windows, dynamic page flows, etc…)</li><li>Updating all pages to be responsive.</li></ul><p>I have expanded my knowledge to include technologies and languages that aren't being used at AboveTraining to adapt to new ideas and solutions.</p>",
+		"title": "StateFoodSafety / AboveTraining",
+        "description": "<p>During my time with StateFoodSafety I gained experience and knowledge in full-stack web development. I pitched and implemented tools and features that have been beneficial to the efficiency, flow, and overall user experience for StateFoodSafety maintained websites. One such tool that I researched and implemented was streamlining the creation of client-specific web portals. I shortened the initial creation time from 3+ weeks to 1-2 days, and future maintenance from a few days to less than an hour.</p><p>I extensively worked to update the websites into Vue for faster and easier maintenance. I also worked with many new developers and trained them on new tools, technologies, and our general processes. One of my favorite aspects of working with others is seeing someone take what I’ve taught them and apply it in new and creative ways. </p><p>I frequently made decisions for standardizing our processes in an effort to make future maintenance easier long-term. For example, I advocated for the use of ESLint across all developer environments to avoid commonly occurring mistakes. In addition, I created a simple-to-use style guide for website components, UX, and UI  implementation to allow future pages and updates to be more homogenous with our current pages. This also allowed other departments the ability to easily see the individual building blocks of our website when requesting changes.</p>",
 		"view": "https://www.statefoodsafety.com",
 		"skills": [
             "Vue",
@@ -12,6 +12,7 @@
             "Ext JS",
             "Node.JS",
             "Webpack",
+            "Babel",
             "Jest",
             "BackstopJS",
             "Cypress",

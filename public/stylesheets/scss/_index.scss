@@ -34,13 +34,8 @@ body.index-body {
             }
         }
 
-        .tag, .skill-tags .skill {
-            display: inline-block;
-            margin-right: 10px;
-            padding: 2px 10px;
-            margin-top: 10px;
-            border-radius: 11px;
-            box-shadow: 0 0 0 1px $tag-border-color;
+        .project-tags {
+            margin-top: 15px;
         }
 
         section.intro-section {
@@ -57,7 +52,7 @@ body.index-body {
                 flex: 1 0 auto;
 
                 .logo-container {
-                    padding: 0 $section-constraint / 2;
+                    padding: 0 ($section-constraint / 2) 5px;
                     text-align: center;
 
                     .logo {
@@ -108,7 +103,7 @@ body.index-body {
 
         .portfolio-section {
             .project-asset-container {
-                margin-top: 10px;
+                margin-top: 15px;
                 position: relative;
 
                 img {

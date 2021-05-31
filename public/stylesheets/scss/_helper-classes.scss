@@ -1,16 +1,19 @@
 .site-button {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border: none;
     padding: 0 15px;
-    height: 30px;
+    height: 35px;
     min-width: 150px;
     background-color: $button-background-color;
     color: $button-font-color;
     border-radius: 3px;
     text-decoration: none;
     line-height: 1;
+    box-shadow: 0 1px 3px RGB(0 0 0 / 12%), 0 1px 2px RGB(0 0 0 / 24%);
+    @include transition(all .125s);
 
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
@@ -19,11 +22,30 @@
     -webkit-font-smoothing: inherit;
     -moz-osx-font-smoothing: inherit;
 
-    &:hover {
+    &:hover, &:focus {
+        box-shadow: 0 3px 6px RGB(0 0 0 / 16%), 0 3px 6px RGB(0 0 0 / 23%);
         cursor: pointer;
-        background-color: $button-background-color-hover;
-        color: $button-font-color;
         text-decoration: none;
+        //opacity: 0.85;
+        transform: scale(1.025);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    &:active {
+        transform: scale(1);
+
+        &::before {
+            display: none;
+        }
     }
 }
 
@@ -36,5 +58,40 @@ hr.separator-line {
 
     @media(min-width: $screen-sm) {
         margin: 0;
+    }
+}
+
+.tag, .skill-tags .skill {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background-color: $tag-background-color;
+    color: $tag-font-color;
+    border-radius: $tag-hard-corner-radius 0 0 $tag-hard-corner-radius;
+    height: $tag-height;
+    padding: 0 10px 0 #{13px+$length-of-tag-point};
+    margin: 0 #{10px+$length-of-tag-point} 10px 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: $tag-font-color;
+        border-radius: 100%;
+        height: $tag-dot-size;
+        // We use length-of-tag-point to make the positioning seem more uniform
+        width: $tag-dot-size;
+        left: $length-of-tag-point;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: -$length-of-tag-point;
+        top: 0;
+        border-bottom: #{$tag-height/2} solid transparent;
+        border-left: $length-of-tag-point solid $tag-background-color;
+        border-top: #{$tag-height/2} solid transparent;
     }
 }
