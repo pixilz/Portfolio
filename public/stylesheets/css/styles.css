@@ -193,7 +193,8 @@ body.index-body main {
             left: 0;
             bottom: 0;
             right: 0;
-            backdrop-filter: blur(10px); }
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); }
     body.index-body main section.intro-section .about-me {
       background-color: #263238;
       color: #fff;
