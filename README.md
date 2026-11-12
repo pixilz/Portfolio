@@ -1,12 +1,16 @@
+# zoeclarno.com
 
-## Synopsis
+My personal site. Written as Vue single-file components that [Astro](https://astro.build) renders to plain HTML at build time — no client-side framework, no islands, no trackers, no web fonts. Content (stats, experience, quotes) lives in `src/data/*.json` and is pulled in at compile time. The result is one ~30 KB page plus a résumé PDF.
 
-This is my professional portfolio to display some of the work I have participated in over the course of my career. This repository is for my professional website hosted [here](https://zoeclarno.com).
+The only JavaScript in the browser is a small hand-written inline script for the theme toggle, the rotating quotes, and the footer year.
 
-It makes use of `gulp` to compile all assets:
-- `scss` -> `css`
-- `pug` -> `html`
+## Commands
 
-`Pug` is used as the templating engine and it takes advantage of `JSON` files to store the majority of the page data.
+| Command        | What it does                       |
+| -------------- | ---------------------------------- |
+| `pnpm install` | Install dependencies               |
+| `pnpm dev`     | Dev server at `localhost:4321`     |
+| `pnpm build`   | Build the static site into `dist/` |
+| `pnpm preview` | Serve the built output locally     |
 
-Use `npm run build` to compile into a static files.
+Deploys to GitHub Pages via the workflow in `.github/workflows/deploy.yml`.

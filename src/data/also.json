@@ -1,0 +1,11 @@
+[
+  { "text": "The platform's global navigation and shared Vue library" },
+  { "text": "Five micro-frontends, from mail merge to new-user onboarding" },
+  { "text": "A React-to-Vue rewrite of the account and billing app" },
+  { "text": "Moved features out of a legacy AngularJS app" },
+  { "text": "White-label theming, with high-contrast support" },
+  { "text": "An AI chat and map onboarding flow with LLM cost caps" },
+  { "text": "A CSV contact import with AI column matching" },
+  { "text": "Cut local setup for new developers to 1–2 hours" },
+  { "text": "At StateFoodSafety: a self-serve client-portal tool that cut setup from 3+ weeks to 1–2 days" }
+]

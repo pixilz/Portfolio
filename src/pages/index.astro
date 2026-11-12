@@ -1,0 +1,22 @@
+---
+// Every section is a Vue SFC (script setup, props, v-for, slots) that Astro
+// renders to plain HTML at build time — no client directives, no islands, no
+// Vue runtime shipped. Data (markers, also-built, experience, quotes) comes
+// from src/data/*.json at compile time.
+import Site from '../layouts/Site.astro';
+import Hero from '../components/site/Hero.vue';
+import Markers from '../components/site/Markers.vue';
+import Work from '../components/site/Work.vue';
+import Experience from '../components/site/Experience.vue';
+import About from '../components/site/About.vue';
+import Contact from '../components/site/Contact.vue';
+---
+
+<Site>
+  <Hero />
+  <Markers />
+  <Work />
+  <Experience />
+  <About />
+  <Contact />
+</Site>

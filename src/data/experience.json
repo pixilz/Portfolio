@@ -1,0 +1,17 @@
+[
+  {
+    "when": "Jun 2021 — Present",
+    "org": "RedX",
+    "role": "Senior Software Engineer",
+    "summary": "I started on the frontend platform and moved into full-stack and technical-lead work. I created and maintain our design system, built new micro-frontends, and led the Vue 3 migration. I've also built backend features in Node and NestJS, and I'm acting as technical lead on a new product.",
+    "tech": ["Vue 2 & 3", "TypeScript", "React", "Node", "NestJS", "Postgres", "MongoDB", "single-spa", "Storybook", "Playwright", "Claude Code"]
+  },
+  {
+    "when": "Feb 2014 — May 2021",
+    "org": "AboveTraining",
+    "orgNote": "(StateFoodSafety)",
+    "role": "Senior Web Developer (Full Stack)",
+    "summary": "Full-stack development on an online food-safety training platform. I advocated for code reviews and testing, helped move us to Vue, led our style guide, and trained employees in our technologies and processes.",
+    "tech": ["Vue", "Vuetify", "Storybook", "PHP", "Doctrine", "MySQL", "Jest", "Cypress", "BackstopJS"]
+  }
+]
