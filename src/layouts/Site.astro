@@ -16,7 +16,6 @@ const {
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="color-scheme" content="light dark" />
 <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={title} />
@@ -48,13 +47,11 @@ const {
 
 <script is:inline define:vars={{ quotes }}>
 (() => {
-  // Theme: follows the OS by default; the button overrides it and remembers the choice (if storage works).
+  // Theme: light by default; the button switches to dark and remembers the choice (if storage works).
   const root = document.documentElement;
   const KEY = 'theme';
   document.querySelector('[data-theme-toggle]').addEventListener('click', () => {
-    const isDark = root.dataset.theme
-      ? root.dataset.theme === 'dark'
-      : matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = root.dataset.theme === 'dark';
     root.dataset.theme = isDark ? 'light' : 'dark';
     try { localStorage.setItem(KEY, root.dataset.theme); } catch {}
   });
