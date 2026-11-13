@@ -10,7 +10,7 @@
         <span><b>Now:</b> acting as technical lead on a new product at RedX, where I'm helping develop both the software and the processes our team uses to build it.</span>
       </p>
       <div class="cta">
-        <a class="btn btn-primary" href="#work">See my work</a>
+        <a class="btn btn-primary" href="#at-a-glance">See my work</a>
         <a class="btn btn-ghost" href="/Resume-ZoeClarno.pdf">Resume (PDF)</a>
       </div>
     </div>
