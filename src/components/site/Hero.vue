@@ -11,7 +11,7 @@
       </p>
       <div class="cta">
         <a class="btn btn-primary" href="#at-a-glance">See my work</a>
-        <a class="btn btn-ghost" href="/Resume-ZoeClarno.pdf">Resume (PDF)</a>
+        <a class="btn btn-ghost" href="/Resume-ZoeClarno.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
       </div>
     </div>
 
